@@ -19,7 +19,7 @@ local Other = Others:Channel("Others")
 local HookMeta = AntiCheat:Channel("Hookmeta Method")
 local ESPs = ESP:Channel("ESP")
 local Visual = TRR:Channel("Visual")
-local Main = ESP:Channel("Main")
+local Main = TRR:Channel("Main")
 
 PhysicalAct:Button("WalkSpeed +16", function() -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed += 16
