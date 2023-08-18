@@ -338,9 +338,23 @@ game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServe
 
 end)
 
+Main:Button("Fix Power", function()
+    local args = {
+    [1] = "PowerOn"
+}
 
+workspace:WaitForChild("Map"):WaitForChild("PowerStation"):WaitForChild("StationFolder"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end)
 
+Main:Button("Spam Fixing Power", function()
+  while true do wait()  
+  local args = {
+    [1] = "PowerOn"
+}
 
+workspace:WaitForChild("Map"):WaitForChild("PowerStation"):WaitForChild("StationFolder"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end
+end)
 
 
 
