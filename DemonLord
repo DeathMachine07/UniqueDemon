@@ -228,6 +228,8 @@ end)
 Other:Button("Delete Borders", function()
     game.Workspace.Filter.InvisibleWalls:ClearAllChildren()
     game.Workspace.Filter.ServerInvisibleWalls:ClearAllChildren()
+    game.Workspace.Map.PowerStation.StationFolder.INVIS:Destroy()
+    game.Workspace.Map.PowerStation.StationFolder.INVIS_COLLIDE:Destroy()
 end)
 
 ESPs:Button("ESP All", function()
