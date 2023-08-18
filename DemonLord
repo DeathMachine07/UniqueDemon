@@ -322,12 +322,6 @@ local args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
 
-local args = {
-    [1] = "Collect",
-    [2] = "UVLamp"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
 
 local args = {
     [1] = "Collect",
@@ -340,7 +334,7 @@ end)
 
 Main:Button("Fix Power", function()
     local args = {
-    [1] = "PowerOn"
+    [1] = "StationStart"
 }
 
 workspace:WaitForChild("Map"):WaitForChild("PowerStation"):WaitForChild("StationFolder"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
@@ -349,7 +343,7 @@ end)
 Main:Button("Spam Fixing Power", function()
   while true do wait()  
   local args = {
-    [1] = "PowerOn"
+    [1] = "StationStart"
 }
 
 workspace:WaitForChild("Map"):WaitForChild("PowerStation"):WaitForChild("StationFolder"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
