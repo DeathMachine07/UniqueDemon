@@ -79,14 +79,17 @@ local function gplr(String)
 	return Found 
 end
 
-local function notif(str,dur)
-	game:FindService("StarterGui"):SetCore("SendNotification", {
-		Title = "yeet gui",
-		Text = str,
-		Icon = "rbxassetid://2005276185",
-		Duration = dur or 3
-	})
+local StarterGui = game:GetService("StarterGui")
+
+function StarterGui:notif(str, dur)
+  self:SetCore("SendNotification", {
+    Title = "yeet gui",
+    Text = str,
+    Icon = "rbxassetid://2005276185",
+    Duration = dur or 3
+  })
 end
+
 
 --// sds
 
