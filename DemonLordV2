@@ -285,3 +285,5 @@ TextButton.MouseButton1Click:Connect(function()
 		notif("Invalid player")
 	end
 end)
+end)
+end)
