@@ -508,11 +508,11 @@ textLabel.Visible = true -- ESP is always visible without a GUI
 textLabel.Parent = billboardGui
 
 if game:GetService("Workspace"):FindFirstChild("Rake") then
-Highlight.Adornee = v
-billboardGui.Parent = v.Head
+Highlight.Adornee = game:GetService("Workspace").Rake
+billboardGui.Parent = game:GetService("Workspace").Rake.Head
 for i = 1,960 do
 wait(0.5)
-textLabel.Text = v.Monster.Health
+textLabel.Text = game:GetService("Workspace").Rake.Monster.Health
 end
 
 game:GetService("Workspace").ChildAdded:Connect(function(v)
