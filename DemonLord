@@ -569,45 +569,6 @@ Visual:Button("Delete Borders", function()
     game.Workspace.Map.PowerStation.StationFolder.INVIS_COLLIDE:Destroy()
 end)
 
-Master:Button("Remove Stamina", function()
-for i,v in ipairs(getconnections(ReplicatedStorage.TKSMNA.Event)) do
-if v.State then 
-v:Disable();
-end
-end
-else
-for i,v in ipairs(getconnections(ReplicatedStorage.TKSMNA.Event)) do
-if not v.State then
-v:Enable();
-end
-end
-end)
-
-Master:Button("Stun Stick Aura", function()
-game.Players.LocalPlayer.Backpack.ChildAdded:Connect(function(tool)
-if tool:IsA("Tool") and not table.find(tools, tool) then
-if tool.Name == "StunStick" then
-table.insert(tools, tool);
-local hitPart = tool:WaitForChild("HitPart", 5);
-tool.Activated:Connect(function()
-task.wait(0.15);
-if Toggles.Reach.Value then
-if game:GetService("Workspace"):FindFirstChild("Rake") and game:GetService("Workspace").Rake:IsDescendantOf(Workspace) then
-local delta = (rake.HumanoidRootPart.Position - humanoidRootPart.Position);
-if delta.Magnitude <= 15 and angleDistance(delta.Unit, humanoidRootPart.CFrame.LookVector.Unit) <= 270 then
-firetouchinterest(game:GetService("Workspace").Rake.Head, hitPart, 1);
-task.wait();
-firetouchinterest(game:GetService("Workspace").Rake.Head, hitPart, 0);
-end
-end
-end
-end)
-return;
-end
-end
-end)
-end)
-
 Master:Button("Remove Jump Delay", function()
     local player = game.Players.LocalPlayer local character = player.Character character.JumpPower = 100 character.JumpHold = false character.JumpStartDelay = 0 character.JumpEndDelay = 0
 end)
