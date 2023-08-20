@@ -2,10 +2,10 @@ local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/da
 local scriptswin = DiscordLib:Window("Unique Demon v.7")
 
 local Basic = scriptswin:Server("Regular", "")
-local DeepHack = scriptswin:Server("Explore", "")
 local PlayerState = scriptswin:Server("Player", "")
-local Commands = scriptswin:Server("Commands & HUB", "")
+local DeepHack = scriptswin:Server("Explore", "")
 local TRR = scriptswin:Server("The Rake Remastered", "")
+local Commands = scriptswin:Server("Commands & HUB", "")
 local AntiCheat = scriptswin:Server("Anti Kick", "")
 local ESP = scriptswin:Server("ESP", "")
 local Others = scriptswin:Server("Others", "")
@@ -17,9 +17,11 @@ local DeepHacks = DeepHack:Channel("Explore")
 local Commander = Commands:Channel("Commands")
 local Other = Others:Channel("Others")
 local HookMeta = AntiCheat:Channel("Hookmeta Method")
-local ESPs = ESP:Channel("ESP")
-local Visual = TRR:Channel("Visual")
+local ESPs = ESP:Channel("Player ESP")
 local Main = TRR:Channel("Main")
+local Visual = TRR:Channel("Visual")
+local Tools = TRR:Channel("Tools")
+local Master = TRR:Channel("Master")
 
 PhysicalAct:Button("WalkSpeed +16", function() -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed += 16
@@ -197,7 +199,7 @@ end)
 BasicSec:Button("FullBright", function()
     game.Lighting.FogEnd = 100000000000
     game.Lighting.ClockTime = 12
-    game.Lighting.Brightness = 25
+    game.Lighting.Brightness = 5
     game.Lighting.GlobalShadows = false
 end)
 
@@ -225,7 +227,7 @@ Commander:Button("Infinite Yield", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-Other:Button("Delete Borders", function()
+Visual:Button("Delete Borders", function()
     game.Workspace.Filter.InvisibleWalls:ClearAllChildren()
     game.Workspace.Filter.ServerInvisibleWalls:ClearAllChildren()
     game.Workspace.Map.PowerStation.StationFolder.INVIS:Destroy()
@@ -272,6 +274,53 @@ end
 end
 end)
 
+Main:Button("Collect Best Items", function()
+    local args = {
+    [1] = "Collect",
+    [2] = "StunStick"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Collect",
+    [2] = "UVLamp"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
+
+
+local args = {
+    [1] = "Collect",
+    [2] = "Vest"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Collect",
+    [2] = "Vitamins"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Collect",
+    [2] = "Tracker"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
+
+end)
+
+Main:Button("Fix Power", function()
+    local args = {
+    [1] = "StationStart"
+}
+
+workspace:WaitForChild("Map"):WaitForChild("PowerStation"):WaitForChild("StationFolder"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end)
+
 Main:Button("Open SH Door", function()
     local args = {
     [1] = "Door"
@@ -307,39 +356,6 @@ Main:Button("Open Supply Drop", function()
 game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
 end)
 
-Main:Button("Collect Best Items", function()
-    local args = {
-    [1] = "Collect",
-    [2] = "StunStick"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Collect",
-    [2] = "UvLamp"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
-
-
-local args = {
-    [1] = "Collect",
-    [2] = "Vest"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
-
-end)
-
-Main:Button("Fix Power", function()
-    local args = {
-    [1] = "StationStart"
-}
-
-workspace:WaitForChild("Map"):WaitForChild("PowerStation"):WaitForChild("StationFolder"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
 Main:Button("Spam Fixing Power", function()
   while true do wait()  
   local args = {
@@ -350,14 +366,130 @@ workspace:WaitForChild("Map"):WaitForChild("PowerStation"):WaitForChild("Station
 end
 end)
 
+Visual:Button("Rake ESP", function()
+  local FillColor = Color3.fromRGB(81, 65, 79) 
+local DepthMode = "AlwaysOnTop" 
+local FillTransparency = 0.3 
+local OutlineColor = Color3.fromRGB(255,0,0) 
+local OutlineTransparency = 0 
+local CoreGui = game:FindService("CoreGui") 
 
+local Storage = Instance.new("Folder") 
+Storage.Parent = CoreGui 
+Storage.Name = "Highlight_Storage" 
 
+local Highlight = Instance.new("Highlight") 
+Highlight.Name = "yoomama"
+Highlight.FillColor = FillColor 
+Highlight.DepthMode = DepthMode 
+Highlight.FillTransparency = FillTransparency 
+Highlight.OutlineColor = OutlineColor 
+Highlight.OutlineTransparency = 0 
+Highlight.Parent = Storage 
 
+local billboardGui = Instance.new("BillboardGui") 
+billboardGui.Name = "TadachiisESPTags" -- Use the correct name for the BillboardGui 
+billboardGui.Size = UDim2.new(0, 100, 0, 50) -- fixed size for the BillboardGui 
+billboardGui.StudsOffset = Vector3.new(0, 2, 0) -- adjust the vertical offset as needed 
+billboardGui.AlwaysOnTop = true 
+billboardGui.LightInfluence = 1 
+billboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local textLabel = Instance.new("TextLabel") 
+textLabel.Name = "NameLabel" -- Use the correct name for the label
+textLabel.Size = UDim2.new(1, 0, 1, 0) 
+textLabel.BackgroundTransparency = 1 -- transparent background 
+textLabel.TextColor3 = Color3.new(1, 0, 0) -- red text for the player's name 
+textLabel.TextScaled = true 
+textLabel.TextStrokeColor3 = Color3.new(0, 0, 0) -- black text stroke 
+textLabel.TextStrokeTransparency = 0 -- fully opaque text stroke (visible through walls) 
+textLabel.Visible = true -- ESP is always visible without a GUI 
+textLabel.Parent = billboardGui
 
+if game:GetService("Workspace"):FindFirstChild("Rake") then
+Highlight.Adornee = v
+billboardGui.Parent = v.Head
+for i = 1,960 do
+wait(0.5)
+textLabel.Text = v.Monster.Health
+end
 
+game:GetService("Workspace").ChildAdded:Connect(function(v)
+if v.Name == "Rake" and v:FindFirstChild("Monster") then
+Highlight.Adornee = v
+billboardGui.Parent = v.Head
+for i = 1,960 do
+wait(0.5)
+textLabel.Text = v.Monster.Health
+end
+end
+end)
 
+game:GetService("Workspace").ChildRemoved:Connect(function(v)
+if v.Name == "Rake" and v:FindFirstChild("Monster") then
+Highlight.Adornee = nil
+billboardGui.Parent = nil
+end
+end)
+end)
 
+Tools:Button("Extend Stun Distance Quality", function()
+    game.Players.LocalPlayer.Backpack.StunStick.HitPart.Size = Vector3.new(45,45,45)
+end)
 
+Tools:Button("Place Trap Offline", function()
+    local args = {
+    [1] = "YourselfStart"
+}
+
+game:GetService("Players").LocalPlayer:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end)
+
+Visual:Button("Load Data", function()
+    local args = {
+    [1] = "LoadData"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("StartRemote"):InvokeServer(unpack(args))
+end)
+
+Master:Button("Remove Stamina", function()
+for i,v in ipairs(getconnections(ReplicatedStorage.TKSMNA.Event)) do
+if v.State then 
+v:Disable();
+end
+end
+else
+for i,v in ipairs(getconnections(ReplicatedStorage.TKSMNA.Event)) do
+if not v.State then
+v:Enable();
+end
+end
+end)
+
+Master:Button("Stun Stick Aura", function()
+game.Players.LocalPlayer.Backpack.ChildAdded:Connect(function(tool)
+if tool:IsA("Tool") and not table.find(tools, tool) then
+if tool.Name == "StunStick" then
+table.insert(tools, tool);
+local hitPart = tool:WaitForChild("HitPart", 5);
+tool.Activated:Connect(function()
+task.wait(0.15);
+if Toggles.Reach.Value then
+if game:GetService("Workspace"):FindFirstChild("Rake") and game:GetService("Workspace").Rake:IsDescendantOf(Workspace) then
+local delta = (rake.HumanoidRootPart.Position - humanoidRootPart.Position);
+if delta.Magnitude <= 15 and angleDistance(delta.Unit, humanoidRootPart.CFrame.LookVector.Unit) <= 270 then
+firetouchinterest(game:GetService("Workspace").Rake.Head, hitPart, 1);
+task.wait();
+firetouchinterest(game:GetService("Workspace").Rake.Head, hitPart, 0);
+end
+end
+end
+end)
+return;
+end
+end
+end)
+end)
 
 
 
