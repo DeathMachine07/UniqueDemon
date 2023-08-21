@@ -345,9 +345,12 @@ Commander:Button("Infinite Yield", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-ESPs:Button("ESP All", function()
+ESPs:Button("ESP", function()
     local FillColor = Color3.fromRGB(139, 0, 0) local DepthMode = "AlwaysOnTop" local FillTransparency = 0.3 local OutlineColor = Color3.fromRGB(255,255,255) local OutlineTransparency = 0 local CoreGui = game:FindService("CoreGui") local Players = game:FindService("Players") local lp = Players.LocalPlayer local connections = {} local Storage = Instance.new("Folder") Storage.Parent = CoreGui Storage.Name = "Highlight_Storage" local function Highlight(plr) local Highlight = Instance.new("Highlight") Highlight.Name = plr.Name Highlight.FillColor = FillColor Highlight.DepthMode = DepthMode Highlight.FillTransparency = FillTransparency Highlight.OutlineColor = OutlineColor Highlight.OutlineTransparency = 0 Highlight.Parent = Storage local plrchar = plr.Character if plrchar then Highlight.Adornee = plrchar end connections[plr] = plr.CharacterAdded:Connect(function(char) Highlight.Adornee = char end) end Players.PlayerAdded:Connect(Highlight) for i,v in next, Players:GetPlayers() do Highlight(v) end Players.PlayerRemoving:Connect(function(plr) local plrname = plr.Name if Storage[plrname] then Storage[plrname]:Destroy() end if connections[plr] then connections[plr]:Disconnect() end end)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/ProjectDark/main/PlayerESP"))()
+end)
+
+ESPs:Button("ESP Name Display", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/ProjectDark/main/PlayerESP"))()
 end)
 
 HookMeta:Button("Client Anti-Kick", function()
@@ -531,24 +534,16 @@ if v then
   end
 end
 
-game:GetService("Workspace").ChildAdded:Connect(function(v)
-  if v.Name == "Rake" and v:FindFirstChild("Monster") then
-    Highlight.Adornee = v
-    billboardGui.Parent = v.Head
+game:GetService("Workspace").ChildAdded:Connect(function(Child)
+  if Child.Name == "Rake" then
+    Highlight.Adornee = Child
+    billboardGui.Parent = Child.Head
     for i = 1, 960 do
       wait(0.5)
-      textLabel.Text = v.Monster.Health
+      textLabel.Text = Child.Monster.Health
     end
   end
 end)
-
-game:GetService("Workspace").ChildRemoved:Connect(function(v)
-  if v.Name == "Rake" and v:FindFirstChild("Monster") then
-    Highlight.Adornee = nil
-    billboardGui.Parent = nil
-  end
-end)
-
 end)
 
 Tools:Button("Extend Stun Distance Quality", function()
