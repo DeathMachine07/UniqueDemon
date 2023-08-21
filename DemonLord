@@ -574,5 +574,5 @@ Visual:Button("Delete Borders", function()
 end)
 
 Master:Button("Remove Jump Delay", function()
-    local player = game.Players.LocalPlayer local character = player.Character character.JumpPower = 100 character.JumpHold = false character.JumpStartDelay = 0 character.JumpEndDelay = 0
+    game:GetService("ReplicatedStorage").CurrentLightingProperties.OutdoorAmbient:Destroy()
 end)
