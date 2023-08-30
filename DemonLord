@@ -528,9 +528,9 @@ end
 if v then
   Highlight.Adornee = v
   billboardGui.Parent = v.Head
-  for i = 1, 960 do
-    wait(0.5)
-    textLabel.Text = v.Monster.Health
+  for i = 1, 4800 do
+    wait(0.1)
+    textLabel.Text = math.floor(v.Monster.Health)
   end
 end
 
@@ -540,7 +540,7 @@ game:GetService("Workspace").ChildAdded:Connect(function(Child)
     billboardGui.Parent = Child.Head
     for i = 1, 960 do
       wait(0.5)
-      textLabel.Text = Child.Monster.Health
+      textLabel.Text = math.floor(Child.Monster.Health)
     end
   end
 end)
@@ -555,7 +555,7 @@ Tools:Button("Place Trap Offline", function()
     [1] = "YourselfStart"
 }
 
-game:GetService("Players").LocalPlayer:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+game:GetService("Players").LocalPlayer.Backpack.Trap:WaitForChild("RemoteEvent"):FireServer(unpack(args))
 end)
 
 Visual:Button("Load Data", function()
@@ -575,4 +575,16 @@ end)
 
 Master:Button("Remove Jump Delay", function()
     game:GetService("ReplicatedStorage").CurrentLightingProperties.OutdoorAmbient:Destroy()
+end)
+
+Master:Button("Points Dupe", function()
+    local args = {
+    [1] = "SellScraps",
+    [2] = "Scraps",
+    [3] = "100000"
+}
+
+for i = 1,1000 do
+	game:GetService("ReplicatedStorage"):WaitForChild("ShopEvent"):FireServer(unpack(args))
+end
 end)
