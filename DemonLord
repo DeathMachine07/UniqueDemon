@@ -1,21 +1,19 @@
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
 local scriptswin = DiscordLib:Window("Unique Demon v.7")
 
-local Basic = scriptswin:Server("Regular", "")
-local PlayerState = scriptswin:Server("Player", "")
-local DeepHack = scriptswin:Server("Explore", "")
 local TRR = scriptswin:Server("The Rake Remastered", "")
+local DeepHack = scriptswin:Server("Explore", "")
+local PlayerState = scriptswin:Server("Player", "")
 local Commands = scriptswin:Server("Commands & HUB", "")
+local Basic = scriptswin:Server("Regular", "")
 local AntiCheat = scriptswin:Server("Anti Kick", "")
 local ESP = scriptswin:Server("ESP", "")
-local Others = scriptswin:Server("Others", "")
 
 local PhysicalAct = PlayerState:Channel("Physical Action")
 local AdvancedAct = PlayerState:Channel("Advanced Action")
 local BasicSec = Basic:Channel("Regular")
 local DeepHacks = DeepHack:Channel("Explore")
 local Commander = Commands:Channel("Commands")
-local Other = Others:Channel("Others")
 local HookMeta = AntiCheat:Channel("Hookmeta Method")
 local ESPs = ESP:Channel("Player ESP")
 local Main = TRR:Channel("Main")
@@ -329,6 +327,12 @@ DeepHacks:Button("Dark Dex", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
 end)
 
+DeepHacks:Button("Dark Dex V4", function()
+getgenv().Key = "Bash"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3AIY%20Dex",true))()
+end)
+
+
 DeepHacks:Button("BackDoor", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua", true))()
 end)
@@ -546,7 +550,7 @@ game:GetService("Workspace").ChildAdded:Connect(function(Child)
 end)
 end)
 
-Tools:Button("Extend Stun Distance Quality", function()
+Tools:Button("Increase Stun Distance", function()
     game.Players.LocalPlayer.Backpack.StunStick.HitPart.Size = Vector3.new(45,45,45)
 end)
 
