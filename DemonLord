@@ -1,25 +1,25 @@
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/ProjectDark/main/ScriptHUB"))()
-local scriptswin = DiscordLib:Window("Unique Demon v.7")
+local scriptswin = DiscordLib:Window("Void X Remaster")
 
 local TRR = scriptswin:Server("The Rake Remastered", "")
-local DeepHack = scriptswin:Server("Explore", "")
+local DeepHack = scriptswin:Server("Explorer", "")
 local PlayerState = scriptswin:Server("Player", "")
-local Commands = scriptswin:Server("Commands & HUB", "")
+local Commands = scriptswin:Server("3rd HUBS", "")
 local Basic = scriptswin:Server("Regular", "")
 local AntiCheat = scriptswin:Server("Anti Kick", "")
 local ESP = scriptswin:Server("ESP", "")
 
-local PhysicalAct = PlayerState:Channel("Physical Action")
-local AdvancedAct = PlayerState:Channel("Advanced Action")
+local PhysicalAct = PlayerState:Channel("Physical")
+local AdvancedAct = PlayerState:Channel("Non-Physical")
 local BasicSec = Basic:Channel("Regular")
-local DeepHacks = DeepHack:Channel("Explore")
+local DeepHacks = DeepHack:Channel("Core Contact")
 local Commander = Commands:Channel("Commands")
 local HookMeta = AntiCheat:Channel("Hookmeta Method")
 local ESPs = ESP:Channel("Player ESP")
 local Main = TRR:Channel("Main")
 local Visual = TRR:Channel("Visual")
 local Tools = TRR:Channel("Tools")
-local Master = TRR:Channel("Master")
+local Master = TRR:Channel("Misc")
 
 PhysicalAct:Button("WalkSpeed +16", function() -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed += 16
@@ -323,6 +323,10 @@ DeepHacks:Button("RemoteSpy", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Forked/M%3ASimpleSpy%20V3",true))()
 end)
 
+DeepHacks:Button("RemoteSpy V1", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua"))()
+end)
+
 DeepHacks:Button("Dark Dex", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
 end)
@@ -347,6 +351,11 @@ end)
 
 Commander:Button("Infinite Yield", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Commander:Button("Rake Evolved", function()
+    getgenv().MOBILE = true
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c2c886534e662c614423ee5748353fe4.lua"))()
 end)
 
 ESPs:Button("ESP", function()
@@ -392,7 +401,7 @@ end
 end
 end)
 
-Main:Button("Collect Best Items", function()
+Main:Button("Collect Best Item", function()
     local args = {
     [1] = "Collect",
     [2] = "StunStick"
@@ -402,7 +411,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServe
 
 local args = {
     [1] = "Collect",
-    [2] = "UVLamp"
+    [2] = "UV_Lamp"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("SupplyClientEvent"):FireServer(unpack(args))
@@ -550,6 +559,21 @@ game:GetService("Workspace").ChildAdded:Connect(function(Child)
 end)
 end)
 
+Tools:Toggle("StunStick Aura", function(state)
+    if state then
+       while state do
+           wait(0.6)
+           game.Players.LocalPlayer.Character.StunStick:Activate()
+           local args = {
+              [1] = "H",
+              [2] = workspace:WaitForChild("Rake"):WaitForChild("Head")
+           }
+
+           game:GetService("Players").LocalPlayer.Character.StunStick.Event:FireServer(unpack(args))
+       end
+    end
+end)
+
 Tools:Button("Increase Stun Distance", function()
     game.Players.LocalPlayer.Backpack.StunStick.HitPart.Size = Vector3.new(45,45,45)
 end)
@@ -559,7 +583,7 @@ Tools:Button("Place Trap Offline", function()
     [1] = "YourselfStart"
 }
 
-game:GetService("Players").LocalPlayer.Backpack.Trap:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+game:GetService("Players").LocalPlayer.Character.RakeTrap:WaitForChild("RemoteEvent"):FireServer(unpack(args))
 end)
 
 Visual:Button("Load Data", function()
@@ -570,7 +594,7 @@ Visual:Button("Load Data", function()
 game:GetService("ReplicatedStorage"):WaitForChild("StartRemote"):InvokeServer(unpack(args))
 end)
 
-Visual:Button("Delete Borders", function()
+Master:Button("Delete Borders", function()
     game.Workspace.Filter.InvisibleWalls:ClearAllChildren()
     game.Workspace.Filter.ServerInvisibleWalls:ClearAllChildren()
     game.Workspace.Map.PowerStation.StationFolder.INVIS:Destroy()
