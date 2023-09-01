@@ -34,18 +34,18 @@ AdvancedAct:Button("Fly", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Fly.lua"))()
 end)
 
-AdvancedAct:Toggle("Infinite Jump", function(state)
+AdvancedAct:Button("Infinite Jump", function()
 local InfiniteJumpEnabled = true
 game:GetService("UserInputService").JumpRequest:connect(function()
-	if state then
+	if InfiniteJumpEnabled then
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
 end)
 end)
 
-AdvancedAct:Toggle("NoClip", function(state)
+AdvancedAct:Button("NoClip", function()
     local Plr = game.Players.LocalPlayer
-    while state do wait(0.1) for a, b in pairs(Workspace:GetChildren()) do if b.Name == Plr.Name then for i, v in pairs(b:GetDescendants()) do if v:IsA("BasePart") then v.CanCollide = false end end end end end
+    while true do wait(0.1) for a, b in pairs(Workspace:GetChildren()) do if b.Name == Plr.Name then for i, v in pairs(b:GetDescendants()) do if v:IsA("BasePart") then v.CanCollide = false end end end end end
 end
 end)
 
