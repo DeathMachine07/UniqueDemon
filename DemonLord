@@ -619,33 +619,6 @@ for i = 1,1000 do
 end
 end)
 
-Report:Toggle("Time & Power", function(state)
-    local UI = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
-    local Text = Instance.new("TextLabel", UI)
-    Text.TextColor = Color3.fromRBG(255,255,255)
-    Text.BackgroundTransparency = 0
-    Text.TextScale = true
-    Text.Size = UDIM2.new(0,50,0,30)
-    Text.Position = UDIM2.new(0.5,0,0.7,0)
-    if state then
-    Text.Visible = true
-    while state do
-       wait(0.5)
-       Text.Text = game:GetService("ReplicatedStorage").PowerValues.PowerLevel.Value.." & "..game:GetService("ReplicatedStorage").Timer
-    end
-    else 
-    Text.Visible = false
-end)
-
-Report:Toggle("Rake Health Logs", function(state)
-    while state do
-wait(0.5)
-local a = workspace.Rake
-if a then
-    print(workspace.Rake.Monster.Health)
-end
-end
-end)
 
 
 
