@@ -356,7 +356,7 @@ Commander:Button("Arcexus", function()
 end)
 
 Commander:Button("Infinite Yield", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    loadstring(game:HttpGet(‘https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source’))()
 end)
 
 Commander:Button("Rake Evolved", function()
