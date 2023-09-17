@@ -355,10 +355,6 @@ Commander:Button("Arcexus", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
 end)
 
-Commander:Button("Infinite Yield", function()
-    loadstring(game:HttpGet(‘https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source’))()
-end)
-
 Commander:Button("Rake Evolved", function()
     getgenv().MOBILE = true
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c2c886534e662c614423ee5748353fe4.lua"))()
