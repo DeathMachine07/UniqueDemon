@@ -551,6 +551,7 @@ end
 
 game:GetService("Workspace").ChildAdded:Connect(function(Child)
   if Child.Name == "Rake" then
+wait(5)
     Highlight:Clone().Adornee = Child
     billboardGui:Clone().Parent = Child.Head
     for i = 1, 960 do
@@ -613,7 +614,7 @@ local old_index = mt.__index;
 
 mt.__index = function(a, b) 
 if tostring(a) == "Brightness" then 
-if tostring(b) == "Value" then return 3; 
+if tostring(b) == "Value" then return 7; 
 end 
 end 
 return old_index(a, b);
@@ -628,7 +629,7 @@ Master:Button("Delete Borders", function()
 end)
 
 Master:Button("Remove Jump Delay", function()
-  while true do wait() humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true) end
+  
 end)
 
 Master:Button("Points Dupe", function()
@@ -638,7 +639,7 @@ Master:Button("Points Dupe", function()
     [3] = "100000"
 }
 
-for i = 1,1000 do
+for i = 1,2000 do
 	game:GetService("ReplicatedStorage"):WaitForChild("ShopEvent"):FireServer(unpack(args))
 end
 end)
@@ -692,8 +693,7 @@ end
 end)
 
 ESPi:Button("Trap ESP", function()
-    local FillColor = Color3.fromRGB(81, 65, 79) 
-local Delocal FillColor = Color3.fromRGB(81, 65, 79)
+    local FillColor = Color3.fromRGB(255, 255, 255) 
 local DepthMode = "AlwaysOnTop"
 local FillTransparency = 0.3
 local OutlineColor = Color3.fromRGB(255, 0, 0)
@@ -741,6 +741,7 @@ end
 
 workspace.Debris.Traps.ChildAdded:Connect(function(child)
 if child.Name == "RakeTrapModel" then
+wait(5)
 Highlight:Clone().Adornee = child
 billboardGui:Clone().Parent = child.Open
 end
@@ -748,8 +749,7 @@ end)
 end)
 
 ESPi:Button("Scrap ESP", function()
-    local FillColor = Color3.fromRGB(81, 65, 79) 
-local Delocal FillColor = Color3.fromRGB(81, 65, 79)
+    local FillColor = Color3.fromRGB(0,281,0) 
 local DepthMode = "AlwaysOnTop"
 local FillTransparency = 0.3
 local OutlineColor = Color3.fromRGB(255, 0, 0)
@@ -788,15 +788,14 @@ textLabel.Visible = true -- ESP is always visible without a GUI
 textLabel.Text = "O"
 textLabel.Parent = billboardGui
 
-while true do
-wait(1)
+workspace.Filter.ScrapSpawns.ChildAdded:Connect(function()
 for i,v in pairs(workspace.Filter.ScrapSpawns:GetDescendants()) do
 if v.Name == "Clank" and not v:FindFirstChild("yoomama") then
    Highlight:Clone().Adornee = v
 billboardGui:Clone().Parent = v
 end
 end
-end
+end)
 end)
 
 
