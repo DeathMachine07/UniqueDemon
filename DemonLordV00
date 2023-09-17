@@ -116,13 +116,9 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
   
  Character.HumanoidRootPart.Touched:Connect(function(part) 
  if part.Parent:FindFirstChild("Monster") and Yoke == true or part.Parent:FindFirstChild("Zombie") and Yoke == true then 
- Tries = Tries - 1 
+part.Parent:FindFirstChildOfClass("Humanoid"):TakeDamage(part.Parent:FindFirstChildOfClass("Humanoid").Health)
+Tries = Tries - 1 
  HiButton.Text = "Activating("..Tries.." tries left)" 
- for i,v in pairs(part.Parent:GetDescendants()) do 
- if v:IsA("Attachment") or v:IsA("Weld") or v:IsA("Motor6D") or v:IsA("ManualWeld") or v:IsA("BallSocketConstraint") then 
-         v:Destroy() 
- end 
- end 
  end 
  end) 
  end
