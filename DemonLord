@@ -597,66 +597,6 @@ Visual:Button("Load Data", function()
 game:GetService("ReplicatedStorage"):WaitForChild("StartRemote"):InvokeServer(unpack(args))
 end)
 
-Visual:Button("FullBright", function()
-    local mt = getrawmetatable(game.ReplicatedStorage);
-make_writeable(mt); 
-local old_index = mt.__index;
-
-mt.__index = function(a, b) 
-if tostring(a) == "FogEnd" then 
-if tostring(b) == "Value" then return 100000; 
-end 
-end 
-return old_index(a, b);
-end
-
-local mt = getrawmetatable(game.ReplicatedStorage.CurrentLightingProperties);
-make_writeable(mt); 
-local old_index = mt.__index;
-
-mt.__index = function(a, b) 
-if tostring(a) == "Brightness" then 
-if tostring(b) == "Value" then return 3; 
-end 
-end 
-return old_index(a, b);
-end
-end)
-
-Master:Button("Delete Borders", function()
-    game.Workspace.Filter.InvisibleWalls:ClearAllChildren()
-    game.Workspace.Filter.ServerInvisibleWalls:ClearAllChildren()
-    game.Workspace.Map.PowerStation.StationFolder.INVIS:Destroy()
-    game.Workspace.Map.PowerStation.StationFolder.INVIS_COLLIDE:Destroy()
-end)
-
-Master:Button("Remove Jump Delay", function()
-  while true do wait() humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true) end
-end)
-
-Master:Button("Points Dupe", function()
-    local args = {
-    [1] = "SellScraps",
-    [2] = "Scraps",
-    [3] = "100000"
-}
-
-for i = 1,1000 do
-	game:GetService("ReplicatedStorage"):WaitForChild("ShopEvent"):FireServer(unpack(args))
-end
-end)
-
-Master:Button("Instant Kill", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV00"))()
-end)
-
-Master:Button("Rejoin Server", function()
-    local ts = game:GetService("TeleportService")
-local p = game:GetService("Players").LocalPlayer
-ts:Teleport(game.PlaceId, p)
-end)
-
-
 
 
 
