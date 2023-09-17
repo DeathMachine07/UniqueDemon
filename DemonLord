@@ -541,26 +541,22 @@ if game:GetService("Workspace"):FindFirstChild("Rake") then
 end
 
 if v then
-  local a = Highlight:Clone()
-a.Adornee = v
-  local b = billboardGui:Clone()
-b.Parent = v.Head
+  Highlight:Clone().Adornee = v
+  billboardGui:Clone().Parent = v.Head
   for i = 1, 4800 do
     wait(0.1)
-    b.textLabel.Text = math.floor(v.Monster.Health)
+    textLabel.Text = math.floor(v.Monster.Health)
   end
 end
 
 game:GetService("Workspace").ChildAdded:Connect(function(Child)
   if Child.Name == "Rake" then
 wait(5)
-    local a = Highlight:Clone()
-a.Adornee = Child
-    local b =billboardGui:Clone()
-b.Parent = Child.Head
+    Highlight:Clone().Adornee = Child
+billboardGui:Clone().Parent = Child.Head
     for i = 1, 960 do
       wait(0.5)
-      b.textLabel.Text = math.floor(Child.Monster.Health)
+      textLabel.Text = math.floor(Child.Monster.Health)
     end
   end
 end)
