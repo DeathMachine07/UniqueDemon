@@ -115,7 +115,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  Character:WaitForChild("HumanoidRootPart").Size = Vector3.new(5,2,5) 
   
  Character.HumanoidRootPart.Touched:Connect(function(part) 
- if part.Parent:FindFirstChild("Monster") or part.Parent:FindFirstChild("Zombie") and Yoke == true then 
+ if part.Parent:FindFirstChild("Monster") and Yoke == true or part.Parent:FindFirstChild("Zombie") and Yoke == true then 
  Tries = Tries - 1 
  HiButton.Text = "Activating("..Tries.." tries left)" 
  for i,v in pairs(part.Parent:GetDescendants()) do 
