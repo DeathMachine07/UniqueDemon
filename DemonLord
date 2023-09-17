@@ -541,22 +541,26 @@ if game:GetService("Workspace"):FindFirstChild("Rake") then
 end
 
 if v then
-  Highlight:Clone().Adornee = v
-  billboardGui:Clone().Parent = v.Head
+  local a = Highlight:Clone()
+a.Adornee = v
+  local b = billboardGui:Clone()
+b.Parent = v.Head
   for i = 1, 4800 do
     wait(0.1)
-    textLabel.Text = math.floor(v.Monster.Health)
+    b.textLabel.Text = math.floor(v.Monster.Health)
   end
 end
 
 game:GetService("Workspace").ChildAdded:Connect(function(Child)
   if Child.Name == "Rake" then
 wait(5)
-    Highlight:Clone().Adornee = Child
-    billboardGui:Clone().Parent = Child.Head
+    local a = Highlight:Clone()
+a.Adornee = Child
+    local b =billboardGui:Clone()
+b.Parent = Child.Head
     for i = 1, 960 do
       wait(0.5)
-      textLabel.Text = math.floor(Child.Monster.Health)
+      b.textLabel.Text = math.floor(Child.Monster.Health)
     end
   end
 end)
@@ -734,16 +738,20 @@ textLabel.Parent = billboardGui
 
 for i,v in pairs(workspace.Debris.Traps:GetChildren()) do
 if v.Name == "RakeTrapModel" then
-   Highlight:Clone().Adornee = v
-billboardGui:Clone().Parent = v.Open
+   local a = Highlight:Clone()
+a.Adornee = v
+local b = billboardGui:Clone()
+b.Parent = v.Open
 end
 end
 
 workspace.Debris.Traps.ChildAdded:Connect(function(child)
 if child.Name == "RakeTrapModel" then
 wait(5)
-Highlight:Clone().Adornee = child
-billboardGui:Clone().Parent = child.Open
+local a = Highlight:Clone()
+a.Adornee = child
+local b = billboardGui:Clone()
+b.Parent = child.Open
 end
 end)
 end)
@@ -791,8 +799,10 @@ textLabel.Parent = billboardGui
 workspace.Filter.ScrapSpawns.ChildAdded:Connect(function()
 for i,v in pairs(workspace.Filter.ScrapSpawns:GetDescendants()) do
 if v.Name == "Clank" and not v:FindFirstChild("yoomama") then
-   Highlight:Clone().Adornee = v
-billboardGui:Clone().Parent = v
+   local a = Highlight:Clone()
+a.Adornee = v
+local b = billboardGui:Clone()
+b.Parent = v
 end
 end
 end)
