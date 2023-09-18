@@ -812,6 +812,7 @@ for i,v in pairs(a:GetDescendants()) do if v:IsA("PointLight") or v:IsA("SpotLig
 a.Glow.Particle.Rate = 150
 a.Glow.Particle.Enabled = true
 local character = game.Players.LocalPlayer.Character
+end
 local Debounce = false
 character.StunStick.Activated:Connect(function()
 if Debounce == false then
@@ -832,7 +833,7 @@ Debounce = false
 Color:Destroy()
 wait(4.3)
 Sound:Destroy()
-end)
+end
 end)
 
 a.Glow.Particle:GetPropertyChangedSignal("Enabled"):Connect(function()
