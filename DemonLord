@@ -804,48 +804,4 @@ end
 end)
 end)
 
-Visual:Button("Stun Stick Effect", function()
-  local a = game.Players.LocalPlayer.Character.StunStick
-
-a.Glow.Color = Color3.fromRGB(255,0,0)
-for i,v in pairs(a:GetDescendants()) do if v:IsA("PointLight") or v:IsA("SpotLight") then v.Color = Color3.fromRGB(255,0,0) end end
-a.Glow.Particle.Rate = 150
-a.Glow.Particle.Enabled = true
-local character = game.Players.LocalPlayer.Character
-end
-local Debounce = false
-character.StunStick.Activated:Connect(function()
-if Debounce == false then
-Debounce = true
-wait(0.2)
-local Sound = Instance.new("Sound")
-Sound.Parent = workspace
-Sound.Volume = 10
-Sound.SoundId = "rbxassetid://12222030"
-Sound:Play()
-local Color = Instance.new("ColorCorrectionEffect")
-Color.Parent = game.Lighting
-Color.Brightness = -0.2
-Color.TintColor = Color3.fromRGB(255,0,0)
-Color.Saturation = 0.6
-wait(0.39)
-Debounce = false
-Color:Destroy()
-wait(4.3)
-Sound:Destroy()
-end
-end)
-
-a.Glow.Particle:GetPropertyChangedSignal("Enabled"):Connect(function()
-a.Glow.Particle.Enabled = true
-end)
-end)
-
-
-
-
-
-
-
-
 
