@@ -1,7 +1,7 @@
 local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "DeliveryCreator"} 
   
  local player = game.Players.LocalPlayer 
- if table.find(PlayerPermission, player.Name) then 
+ --if table.find(PlayerPermission, player.Name) then 
   
  local Gui = Instance.new("ScreenGui") 
  Gui.Parent = game.Players.LocalPlayer.PlayerGui 
@@ -96,7 +96,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
          HiButton.Text = "Dis_Activated" 
          Yoke = false -- Set the toggle button text to "Off" 
      else -- If the frame is not visible 
-         HiButton.Text = "Activating("..Tries.." tries left)" 
+         HiButton.Text = "Activating" 
          Yoke = true -- Set the toggle button text to "On" 
      end 
  end 
@@ -117,8 +117,6 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  Character.HumanoidRootPart.Touched:Connect(function(part) 
  if part.Parent:FindFirstChild("Monster") and Yoke == true or part.Parent:FindFirstChild("Zombie") and Yoke == true then 
 part.Parent:FindFirstChildOfClass("Humanoid"):TakeDamage(part.Parent:FindFirstChildOfClass("Humanoid").Health)
-Tries = Tries - 1 
- HiButton.Text = "Activating("..Tries.." tries left)" 
  end 
  end) 
- end
+-- end
