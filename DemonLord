@@ -835,6 +835,20 @@ return old_index(a, b);
 end
 end)
 
+CharacterChain:Button("Infinite Dodge", function()
+    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
+make_writeable(mt); 
+local old_index = mt.__index;
+
+mt.__index = function(a, b) 
+if tostring(a) == "Dodging" then 
+if tostring(b) == "Value" then return false; 
+end 
+end 
+return old_index(a, b);
+end
+end)
+
 
 CharacterChain:Button("WalkSpeed + 100", function()
     local mt = getrawmetatable(game.Players.LocalPlayer.Character);
