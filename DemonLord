@@ -23,6 +23,8 @@ local ESPi = TRR:Channel("ESP")
 local Tools = TRR:Channel("Tools")
 local Master = TRR:Channel("Misc")
 local CharacterChain = CHAIN:Channel("Character")
+local TeleportChain = CHAIN:Channel("Teleport")
+local TestChain = CHAIN:Channel("Test")
 local MiscChain = CHAIN:Channel("Misc")
 
 
@@ -358,9 +360,8 @@ Commander:Button("Arcexus", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
 end)
 
-Commander:Button("Rake Evolved", function()
-    getgenv().MOBILE = true
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c2c886534e662c614423ee5748353fe4.lua"))()
+Commander:Button("Break In 2", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RScriptz/RobloxScripts/main/BreakIn2.lua"))()
 end)
 
 ESPs:Button("ESP", function()
@@ -389,7 +390,7 @@ HookMeta:Button("Set WalkSpeed to X", function()
 local humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
 old = hookmetamethod(game,"__index",function(self,key)
 if self == humanoid and key == "WalkSpeed" then
-return 16
+return 90
 end
 return old(self,key)
 
@@ -961,4 +962,14 @@ billboardGui.Parent = Child.Head
   end
 end)
 end)
+
+MiscChain:Button("Delete Borders", function()
+    workspace.Misc.Barriers:ClearAllChildren()
+end)
+
+TeleportChain:Button("PowerStation Teleport", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, -109, -130)
+end)
+
+
 
