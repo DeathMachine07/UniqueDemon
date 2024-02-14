@@ -971,7 +971,7 @@ MiscChain:Button("Delete Borders", function()
 end)
 
 MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
-    game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(5,5,5)
+    game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(15,15,15)
 end)
 
 TeleportChain:Button("PowerStation Teleport", function()
