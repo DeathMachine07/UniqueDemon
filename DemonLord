@@ -822,6 +822,21 @@ return old_index(a, b);
 end
 end)
 
+CharacterChain:Button("Infinite Combat", function()
+    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
+make_writeable(mt); 
+local old_index = mt.__index;
+
+mt.__index = function(a, b) 
+if tostring(a) == "CombatStamina" then 
+if tostring(b) == "Value" then return 9999; 
+end 
+end 
+return old_index(a, b);
+end
+end)
+
+
 CharacterChain:Button("Super Stamina Regen", function()
     local mt = getrawmetatable(game.Players.LocalPlayer.Character);
 make_writeable(mt); 
