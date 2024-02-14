@@ -866,45 +866,33 @@ end
 end)
 
 
-CharacterChain:Button("WalkSpeed + 100", function()
-    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
-make_writeable(mt); 
-local old_index = mt.__index;
+CharacterChain:Button("Always Dodging for 7 minutes (Lag)", function()
+    for i = 1,5000 do wait(0.2)
+local args = {
+    [1] = "Dodge"
+}
 
-mt.__index = function(a, b) 
-if tostring(a) == "WalkSpeed" then 
-if tostring(b) == "Value" then return 100; 
-end 
-end 
-return old_index(a, b);
+game:GetService("Players").LocalPlayer.Character.CharacterMobility.CTS:FireServer(unpack(args))
 end
 end)
 
-CharacterChain:Button("RunSpeed + 100", function()
-    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
-make_writeable(mt); 
-local old_index = mt.__index;
+CharacterChain:Button("Always Block with Machete for 3 minutes (Lag)", function()
+   for i = 1,2000 do wait(0.1)
+local args = {
+    [1] = "ParryBegin"
+}
 
-mt.__index = function(a, b) 
-if tostring(a) == "RunSpeed" then 
-if tostring(b) == "Value" then return 100; 
-end 
-end 
-return old_index(a, b);
+game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
 end)
 
-CharacterChain:Button("CrouchSpeed + 100", function()
-    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
-make_writeable(mt); 
-local old_index = mt.__index;
+CharacterChain:Button("Always Swing Machete for 7 minutes (Lag)", function()
+   for i = 1,5000 do wait(0.1)
+local args = {
+    [1] = "MacheteSwing2"
+}
 
-mt.__index = function(a, b) 
-if tostring(a) == "CrouchSpeed" then 
-if tostring(b) == "Value" then return 100; 
-end 
-end 
-return old_index(a, b);
+game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
 end)
 
@@ -980,6 +968,10 @@ end)
 
 MiscChain:Button("Delete Borders", function()
     workspace.Misc.Barriers:ClearAllChildren()
+end)
+
+MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
+    game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(5,5,5)
 end)
 
 TeleportChain:Button("PowerStation Teleport", function()
