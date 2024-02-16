@@ -95,9 +95,9 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
    local player = game.Players.LocalPlayer 
  local Character = player.Character or player.CharacterAdded:Wait() 
 for i = 1,6 do
-   wait(7)
+   wait(2.5)
 Character.HumanoidRootPart.CFrame = CFrame.new(-208, 109, -130)
-wait (3)
+wait (2.5)
 Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end
  end 
