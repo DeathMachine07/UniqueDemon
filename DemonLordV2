@@ -114,10 +114,10 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
   
  while true do
 if Yolk == true then
-   wait(4)
-Character.HumanoidRootPart.CFrame = CFrame.new()
+   wait(5)
+Character.HumanoidRootPart.CFrame = CFrame.new(-208, 109, -130)
 wait (3)
-Character.HumanoidRootPart.CFrame = 
+Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end
 end
 -- end
