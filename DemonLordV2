@@ -92,13 +92,14 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  end 
   
  local function ToggleButtonbru() -- Set the frame visibility to the state 
-     if HiButton.Text == "Activating" then -- If the frame is visible 
-         HiButton.Text = "Dis_Activated" 
-         Yoke = false -- Set the toggle button text to "Off" 
-     else -- If the frame is not visible 
-         HiButton.Text = "Activating" 
-         Yoke = true -- Set the toggle button text to "On" 
-     end 
+   local player = game.Players.LocalPlayer 
+ local Character = player.Character or player.CharacterAdded:Wait() 
+for i = 1,6 do
+   wait(5)
+Character.HumanoidRootPart.CFrame = CFrame.new(-208, 109, -130)
+wait (3)
+Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
+end
  end 
   
   
@@ -109,15 +110,5 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  HiButton.MouseButton1Click:Connect(ToggleButtonbru) 
  ToggleButton.MouseButton1Click:Connect(ToggleFrame) 
   
- local player = game.Players.LocalPlayer 
- local Character = player.Character or player.CharacterAdded:Wait() 
-  
- while true do
-if Yolk == true then
-   wait(5)
-Character.HumanoidRootPart.CFrame = CFrame.new(-208, 109, -130)
-wait (3)
-Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
-end
-end
+ 
 -- end
