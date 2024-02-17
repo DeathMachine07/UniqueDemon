@@ -24,7 +24,7 @@ local Tools = TRR:Channel("Tools")
 local Master = TRR:Channel("Misc")
 local CharacterChain = CHAIN:Channel("Character")
 local TeleportChain = CHAIN:Channel("Teleport")
-local TestChain = CHAIN:Channel("Test")
+local VisualChain = CHAIN:Channel("Visual")
 local MiscChain = CHAIN:Channel("Misc")
 
 
@@ -1012,4 +1012,16 @@ TeleportChain:Button("CHAIN Spawn", function()
     game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-18, 20, -226)
 end)
 
+VisualChain:Button("Fullbright", function()
+    game.Lighting.FogEnd = 100000000000
+    game.Lighting.FogStart = 10000000000
+    game.Lighting.ClockTime = 12
+    game.Lighting.Brightness = 5
+    game.Lighting.GlobalShadows = false
+for i,v in pairs(game.Lighting:GetChildren()) do
+      if v.Name ~= "Misc" then
+v:Destroy()
+end
+end
+end)
 
