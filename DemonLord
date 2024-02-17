@@ -997,40 +997,40 @@ MiscChain:Button("Delete Borders", function()
 end)
 
 
-MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
-    game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(15,15,15)
+MiscChain:Button("Fake Touch Machete with Chain", function()
+    firetouchinterest(game.Players.LocalPlayer.Character.Machete.Handle, game.Workspace.Misc.AI.CHAIN.PrimaryPart, 0)
 end)
 
 TeleportChain:Button("PowerStation", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(-208, 60, -130)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, 60, -130)
 end)
 
 TeleportChain:Button("Small Cabin", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(161, 60, 231)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(161, 60, 231)
 end)
 
 TeleportChain:Button("Warehouse", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(325, 60, -229)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(325, 60, -229)
 end)
 
 TeleportChain:Button("Safehouse", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(149, 60, 2)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(149, 60, 2)
 end)
 
 TeleportChain:Button("Car Cabin", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(179, 60, -36)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(179, 60, -36)
 end)
 
 TeleportChain:Button("Campfire", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(297, 60, 167)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(297, 60, 167)
 end)
 
 TeleportChain:Button("Shop", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(-210, 20, -242)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-210, 20, -242)
 end)
 
 TeleportChain:Button("CHAIN Spawn", function()
-    game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(-18, 20, -226)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-18, 20, -226)
 end)
 
 VisualChain:Button("Fullbright", function()
