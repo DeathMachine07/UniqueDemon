@@ -901,9 +901,15 @@ MiscChain:Button("Warp Chain to Location", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV2"))()
 end)
 
-MiscChain:Button("Insta Kill Chain", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/ProjectDark/main/CHAINS"))()
+MiscChain:Button("Dupe Points Power", function()
+   for i = 1,2000 do
+fireproximityprompt(game.Workspace.GameStuff.GameSections.POWERSTATION.Hitbox.ProximityPrompt)
+end
 end)
+
+-- MiscChain:Button("Insta Kill Chain", function()
+  --  loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/ProjectDark/main/CHAINS"))()
+--end)
 
 MiscChain:Button("Chain ESP", function()
 local FillColor = Color3.fromRGB(81, 65, 79)
@@ -971,7 +977,7 @@ billboardGui.Parent = Child.Head
 end)
 end)
 
-MiscChain:Button("Scraps Auto Collect", function()
+MiscChain:Button("Open Supply & Shop & Doors", function()
     local Player = game.Players.LocalPlayer
 local Character = Player.Character
 
@@ -979,9 +985,7 @@ for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
   if v.ClassName == "ProximityPrompt" then
     Character.HumanoidRootPart.CFrame = v.Parent.CFrame
    
-    for i = 1,2000 do
       fireproximityprompt(v)
-    end
     local args = {
       [1] = "Looting34534534534534345345"
       }
@@ -992,20 +996,14 @@ for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 end
 end)
 
-MiscChain:Button("Dupe Points Power", function()
-   for i = 1,2000 do
-fireproximityprompt(game.Workspace.GameStuff.GameSections.POWERSTATION.Hitbox.ProximityPrompt)
-end
-end)
-
 MiscChain:Button("Delete Borders", function()
     workspace.Misc.Barriers:ClearAllChildren()
 end)
 
 
-MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
-    game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(15,15,15)
-end)
+--MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
+ --   game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(15,15,15)
+--end)
 
 TeleportChain:Button("PowerStation", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
@@ -1019,11 +1017,11 @@ TeleportChain:Button("Warehouse", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(325, 60, -229)
 end)
 
-TeleportChain:Button("Safehouse", function()
+TeleportChain:Button("Car Cabin", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(149, 60, 2)
 end)
 
-TeleportChain:Button("Car Cabin", function()
+TeleportChain:Button("Safehouse", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(179, 60, -36)
 end)
 
