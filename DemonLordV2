@@ -10,11 +10,11 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  -- Create a Frame and set its properties 
  local MainFrame = Instance.new("Frame") 
  MainFrame.Name = "MainFrame" 
- MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0) -- Center of the screen 
- MainFrame.Size = UDim2.new(0.5, 0, 0.5, 0) -- Half of the screen size 
+ MainFrame.Position = UDim2.new(0.7, 0, 0.3, 0) -- Center of the screen 
+ MainFrame.Size = UDim2.new(0.2, 0, 0.2, 0) -- Half of the screen size 
  MainFrame.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  MainFrame.BackgroundColor3 = Color3.new(0, 0, 0)-- Black color 
- MainFrame.BackgroundTransparency = 0.3 
+ MainFrame.BackgroundTransparency = 0.7 
  MainFrame.BorderSizePixel = 2 
  MainFrame.BorderColor3 = Color3.new(0,0,0) 
  MainFrame.Parent = Gui 
@@ -27,19 +27,20 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  TitleLabel.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  TitleLabel.BackgroundTransparency = 1 -- White color 
  TitleLabel.TextColor3 = Color3.new(1,1,1) -- Black color 
- TitleLabel.Text = "Insta-Kill" -- The text to display 
+ TitleLabel.Text = "Wrap Menu" -- The text to display 
  TitleLabel.Font = Enum.Font.Oswald -- The font to use 
  TitleLabel.TextSize = 27 -- The text size 
  TitleLabel.Parent = MainFrame 
   
  -- Create a TextButton and set its properties 
- local HiButton = Instance.new("TextButton") 
+ local HiButton = Instance.new("TextButton")
  HiButton.Name = "HiButton" 
  HiButton.Position = UDim2.new(0.5, 0, 0.5, 0) -- Center of the frame 
  HiButton.Size = UDim2.new(0.9, 0, 0.4, 0) -- Relative to the frame size 
  HiButton.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  HiButton.BackgroundColor3 = Color3.fromRGB(153,153,153) -- White color 
  HiButton.TextColor3 = Color3.new(0, 0, 0) -- Black color 
+ HiButton.BackgroundTransparency = 0.5
  HiButton.Text = "Active (7 times teleport)" -- The text to display 
  HiButton.Font = Enum.Font.SourceSans -- The font to use 
  HiButton.TextSize = 24 -- The text size 
@@ -93,14 +94,17 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
   
  local function ToggleButtonbru() -- Set the frame visibility to the state 
    local player = game.Players.LocalPlayer 
- local Character = player.Character or player.CharacterAdded:Wait() 
-for i = 1,6 do
-   wait(2.5)
-Character.HumanoidRootPart.CFrame = CFrame.new(-208, 109, -130)
-wait (2.5)
-Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
+   local Character = player.Character or player.CharacterAdded:Wait() 
+     if Yolk == false then
+Yolk = true
+HiButton.Text = "Wrap To POWERSTATION"
+     Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
 end
- end 
+elseif Yolk == true then
+Yolk = false
+HiButton.Text = "Wrap To CHAIN"
+     Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
+end 
   
   
  -- Define a function to print "hi" when the hi button is clicked 
