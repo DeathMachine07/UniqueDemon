@@ -41,7 +41,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  HiButton.BackgroundColor3 = Color3.fromRGB(153,153,153) -- White color 
  HiButton.TextColor3 = Color3.new(0, 0, 0) -- Black color 
  HiButton.BackgroundTransparency = 0.5
- HiButton.Text = "Active (7 times teleport)" -- The text to display 
+ HiButton.Text = "Warp To POWERSTATION" -- The text to display 
  HiButton.Font = Enum.Font.SourceSans -- The font to use 
  HiButton.TextSize = 24 -- The text size 
  HiButton.Parent = MainFrame 
@@ -95,12 +95,12 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  local function ToggleButtonbru() -- Set the frame visibility to the state 
    local player = game.Players.LocalPlayer 
    local Character = player.Character or player.CharacterAdded:Wait() 
-     if Yolk == false then
-Yolk = true
+     if Yoke == false then
+Yoke = true
 HiButton.Text = "Warp To POWERSTATION"
      Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
-elseif Yolk == true then
-Yolk = false
+elseif Yoke == true then
+Yoke = false
 HiButton.Text = "Warp To CHAIN"
      Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end 
