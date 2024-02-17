@@ -979,8 +979,28 @@ MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
     game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(15,15,15)
 end)
 
-TeleportChain:Button("PowerStation Teleport", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, 109, -130)
+TeleportChain:Button("PowerStation", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, 20, -130)
+end)
+
+TeleportChain:Button("Small Cabin", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(161, 20, 231)
+end)
+
+TeleportChain:Button("Warehouse", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(325, 20, -229)
+end)
+
+TeleportChain:Button("Safehouse", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(149, 20, 2)
+end)
+
+TeleportChain:Button("Car Cabin", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(179, 20, -36)
+end)
+
+TeleportChain:Button("Campfire", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(297, 20, 167)
 end)
 
 
