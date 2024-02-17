@@ -325,6 +325,7 @@ end)
 
 BasicSec:Button("FullBright", function()
     game.Lighting.FogEnd = 100000000000
+    game.Lighting.FogStart = 10000000000
     game.Lighting.ClockTime = 12
     game.Lighting.Brightness = 5
     game.Lighting.GlobalShadows = false
