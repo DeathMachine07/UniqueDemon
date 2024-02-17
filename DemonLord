@@ -896,7 +896,11 @@ game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remot
 end
 end)
 
-MiscChain:Button("Kill Chain", function()
+MiscChain:Button("Wrap Chain to Location", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV2"))()
+end)
+
+MiscChain:Button("Insta Kill Chain", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/ProjectDark/main/CHAINS"))()
 end)
 
@@ -970,16 +974,13 @@ MiscChain:Button("Delete Borders", function()
     workspace.Misc.Barriers:ClearAllChildren()
 end)
 
-MiscChain:Button("Auto Kill", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV2"))()
-end)
 
 MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
     game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(15,15,15)
 end)
 
 TeleportChain:Button("PowerStation Teleport", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, -109, -130)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, 109, -130)
 end)
 
 
