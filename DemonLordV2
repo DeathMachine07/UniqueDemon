@@ -27,7 +27,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  TitleLabel.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  TitleLabel.BackgroundTransparency = 1 -- White color 
  TitleLabel.TextColor3 = Color3.new(1,1,1) -- Black color 
- TitleLabel.Text = "Wrap Menu" -- The text to display 
+ TitleLabel.Text = "Warp Menu" -- The text to display 
  TitleLabel.Font = Enum.Font.Oswald -- The font to use 
  TitleLabel.TextSize = 27 -- The text size 
  TitleLabel.Parent = MainFrame 
@@ -97,12 +97,12 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
    local Character = player.Character or player.CharacterAdded:Wait() 
      if Yolk == false then
 Yolk = true
-HiButton.Text = "Wrap To POWERSTATION"
+HiButton.Text = "Warp To POWERSTATION"
      Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
 end
 elseif Yolk == true then
 Yolk = false
-HiButton.Text = "Wrap To CHAIN"
+HiButton.Text = "Warp To CHAIN"
      Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end 
   
