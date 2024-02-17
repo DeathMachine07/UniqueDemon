@@ -992,6 +992,12 @@ for i,v in pairs(game:GetService("Workspace").Misc.Lootable:GetDescendants()) do
 end
 end)
 
+MiscChain:Button("Dupe Points Power", function()
+   for i = 1,2000 do
+fireproximityprompt(game.Workspace.GameStuff.GameSections.POWERSTATION.Hitbox.ProximityPrompt)
+end
+end)
+
 MiscChain:Button("Delete Borders", function()
     workspace.Misc.Barriers:ClearAllChildren()
 end)
