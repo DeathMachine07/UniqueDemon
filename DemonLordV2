@@ -41,7 +41,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  HiButton.BackgroundColor3 = Color3.fromRGB(153,153,153) -- White color 
  HiButton.TextColor3 = Color3.new(0, 0, 0) -- Black color 
  HiButton.BackgroundTransparency = 0.5
- HiButton.Text = "Warp To POWERSTATION" -- The text to display 
+ HiButton.Text = "Warp To POWERSTAION" -- The text to display 
  HiButton.Font = Enum.Font.SourceSans -- The font to use 
  HiButton.TextScaled = true -- The text size 
  HiButton.Parent = MainFrame 
@@ -56,7 +56,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  CreditLabel.TextColor3 = Color3.fromRGB(255,0,0) -- Black color 
  CreditLabel.Text = "Credits: Void X" -- The text to display 
  CreditLabel.Font = Enum.Font.Arial -- The font to use 
- CreditLabel.TextSize = 24 -- The text size 
+ CreditLabel.TextScaled = true -- The text size 
  CreditLabel.Parent = MainFrame 
   
  -- Create a TextButton for toggling the frame and set its properties 
@@ -97,11 +97,11 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
    local Character = player.Character or player.CharacterAdded:Wait() 
      if Yoke == false then
 Yoke = true
-HiButton.Text = "Warp To POWERSTATION"
+HiButton.Text = "Warp To CHAIN"
      Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
 elseif Yoke == true then
 Yoke = false
-HiButton.Text = "Warp To CHAIN"
+HiButton.Text = "Warp To POWERSTATION"
      Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end 
 end
