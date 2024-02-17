@@ -971,6 +971,27 @@ billboardGui.Parent = Child.Head
 end)
 end)
 
+MiscChain:Button("Scraps Auto Collect", function()
+    local Player = game.Players.LocalPlayer
+local Character = Player.Character
+
+for i,v in pairs(game:GetService("Workspace").Misc.Lootable:GetDescendants()) do
+  if v.ClassName == "ProximityPrompt" then
+    Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+   
+    for i = 1,2000 do
+      fireproximityprompt(v)
+    end
+    local args = {
+      [1] = "Looting34534534534534345345"
+      }
+
+    game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
+    wait(0.2)
+  end
+end
+end)
+
 MiscChain:Button("Delete Borders", function()
     workspace.Misc.Barriers:ClearAllChildren()
 end)
