@@ -43,7 +43,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  HiButton.BackgroundTransparency = 0.5
  HiButton.Text = "Warp To POWERSTATION" -- The text to display 
  HiButton.Font = Enum.Font.SourceSans -- The font to use 
- HiButton.TextSize = 24 -- The text size 
+ HiButton.TextScale = true -- The text size 
  HiButton.Parent = MainFrame 
   
  -- Create a TextLabel for the credits and set its properties 
