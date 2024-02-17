@@ -981,28 +981,35 @@ MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
 end)
 
 TeleportChain:Button("PowerStation", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, 20, -130)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-208, 60, -130)
 end)
 
 TeleportChain:Button("Small Cabin", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(161, 20, 231)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(161, 60, 231)
 end)
 
 TeleportChain:Button("Warehouse", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(325, 20, -229)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(325, 60, -229)
 end)
 
 TeleportChain:Button("Safehouse", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(149, 20, 2)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(149, 60, 2)
 end)
 
 TeleportChain:Button("Car Cabin", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(179, 20, -36)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(179, 60, -36)
 end)
 
 TeleportChain:Button("Campfire", function()
-    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(297, 20, 167)
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(297, 60, 167)
 end)
 
+TeleportChain:Button("Shop", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-210, 20, -242)
+end)
+
+TeleportChain:Button("CHAIN Spawn", function()
+    game.Players.LocalPlayer.Character.Torso.Position = Vector3.new(-18, 20, -226)
+end)
 
 
