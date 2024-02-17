@@ -99,12 +99,12 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
 Yolk = true
 HiButton.Text = "Warp To POWERSTATION"
      Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
-end
 elseif Yolk == true then
 Yolk = false
 HiButton.Text = "Warp To CHAIN"
      Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end 
+end
   
   
  -- Define a function to print "hi" when the hi button is clicked 
