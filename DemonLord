@@ -896,7 +896,7 @@ game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remot
 end
 end)
 
-MiscChain:Button("Wrap Chain to Location", function()
+MiscChain:Button("Warp Chain to Location", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV2"))()
 end)
 
