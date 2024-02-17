@@ -815,7 +815,7 @@ local old_index = mt.__index;
 
 mt.__index = function(a, b) 
 if tostring(a) == "Stamina" then 
-if tostring(b) == "Value" then return 9999; 
+if tostring(b) == "Value" then return 100; 
 end 
 end 
 return old_index(a, b);
@@ -844,7 +844,7 @@ local old_index = mt.__index;
 
 mt.__index = function(a, b) 
 if tostring(a) == "StaminaRegen" then 
-if tostring(b) == "Value" then return 1000; 
+if tostring(b) == "Value" then return 100; 
 end 
 end 
 return old_index(a, b);
@@ -858,7 +858,7 @@ local old_index = mt.__index;
 
 mt.__index = function(a, b) 
 if tostring(a) == "Dodging" then 
-if tostring(b) == "BoolValue" then return false; 
+if tostring(b) == "Value" then return true; 
 end 
 end 
 return old_index(a, b);
