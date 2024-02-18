@@ -1054,7 +1054,7 @@ VisualChain:Button("Game Sections", function()
     local Player = game.Players.LocalPlayer
 local Character = Player.Character
 
-for i,v in pairs(game:GetService("Workspace").GameSections:GetDescendants()) do
+for i,v in pairs(game:GetService("Workspace").Misc:GetDescendants()) do
   if v.ClassName == "ProximityPrompt" then
     Character.HumanoidRootPart.CFrame = v.Parent.CFrame
     fireproximityprompt(v)
