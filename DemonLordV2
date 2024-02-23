@@ -110,14 +110,14 @@ end
   
  -- Define a function to print "hi" when the hi button is clicked 
   
-  
- -- Connect the functions to the button events 
- HiButton.MouseButton1Click:Connect(ToggleButtonbru) 
- ToggleButton.MouseButton1Click:Connect(ToggleFrame) 
-  UserInputService.InputBegan:Connect(function(input) 	
+ UserInputService.InputBegan:Connect(function(input) 	
 if input.Keycode == Enum.KeyCode.T then 		
 ToggleButtonbru()
 end
-end)
+end) 
+ -- Connect the functions to the button events 
+ HiButton.MouseButton1Click:Connect(ToggleButtonbru) 
+ ToggleButton.MouseButton1Click:Connect(ToggleFrame) 
+  
  
 -- end
