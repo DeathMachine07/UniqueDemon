@@ -2,8 +2,6 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
   
  local player = game.Players.LocalPlayer 
  --if table.find(PlayerPermission, player.Name) then 
-  local UserInputService = game:GetService("UserInputService") 
-
  local Gui = Instance.new("ScreenGui") 
  Gui.Parent = game.Players.LocalPlayer.PlayerGui 
  local Yoke = false 
@@ -110,7 +108,7 @@ end
   
  -- Define a function to print "hi" when the hi button is clicked 
   
- UserInputService.InputBegan:Connect(function(input) 	
+game:GetService("UserInputService").InputBegan:Connect(function(input) 	
 if input.Keycode == Enum.KeyCode.T then 		
 ToggleButtonbru()
 end
