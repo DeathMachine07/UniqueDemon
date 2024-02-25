@@ -26,7 +26,7 @@ local CharacterChain = CHAIN:Channel("Character")
 local TeleportChain = CHAIN:Channel("Teleport")
 local VisualChain = CHAIN:Channel("Visual")
 local MiscChain = CHAIN:Channel("Misc")
-
+local TestChain = CHAIN:Channel("TEST")
 
 PhysicalAct:Button("WalkSpeed +16", function() -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed += 16
@@ -1060,5 +1060,26 @@ for i,v in pairs(game:GetService("Workspace").Misc:GetDescendants()) do
     fireproximityprompt(v)
     wait(1)
   end
+end
+end)
+
+TestChain:Button("150 Slices", function()
+    for i = 1,150 do 
+local args = {
+    [1] = "MacheteSwing1"
+}
+
+game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
+end
+end)
+
+
+TestChain:Button("3000 Slices", function()
+    for i = 1,3000 do 
+local args = {
+    [1] = "MacheteSwing2"
+}
+
+game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
 end)
