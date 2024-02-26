@@ -1,13 +1,13 @@
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
-local scriptswin = DiscordLib:Window("Void X Remaster")
+local scriptswin = DiscordLib:Window("VOID-X NIGHT WAVES")
 
-local TRR = scriptswin:Server("The Rake Remastered", "")
-local DeepHack = scriptswin:Server("Explorer", "")
-local PlayerState = scriptswin:Server("Player", "")
-local Commands = scriptswin:Server("3rd HUBS", "")
-local Basic = scriptswin:Server("Regular", "")
+local TRR = scriptswin:Server("THE RAKE REMASTERED", "")
+local DeepHack = scriptswin:Server("EXPLORER", "")
+local PlayerState = scriptswin:Server("PLAYER", "")
+local Commands = scriptswin:Server("THIRD HUBS", "")
+local Basic = scriptswin:Server("REGULAR", "")
 local CHAIN = scriptswin:Server("CHAIN", "")
-local AntiCheat = scriptswin:Server("Anti Kick", "")
+local AntiCheat = scriptswin:Server("ANTI KICK", "")
 local ESP = scriptswin:Server("ESP", "")
 
 local PhysicalAct = PlayerState:Channel("Physical")
@@ -26,7 +26,7 @@ local CharacterChain = CHAIN:Channel("Character")
 local TeleportChain = CHAIN:Channel("Teleport")
 local VisualChain = CHAIN:Channel("Visual")
 local MiscChain = CHAIN:Channel("Misc")
-local TestChain = CHAIN:Channel("TEST")
+local VoidChain = CHAIN:Channel("VOID-X Chain")
 
 PhysicalAct:Button("WalkSpeed +16", function() -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed += 16
@@ -823,7 +823,7 @@ return old_index(a, b);
 end
 end)
 
-CharacterChain:Button("Infinite Combat", function()
+CharacterChain:Button("Infinite CombatStamina", function()
     local mt = getrawmetatable(game.Players.LocalPlayer.Character);
 make_writeable(mt); 
 local old_index = mt.__index;
@@ -867,7 +867,7 @@ end
 end)
 
 
-CharacterChain:Button("Always Dodging (Lag)", function()
+CharacterChain:Button("Always Dodging", function()
     while true do wait(0.2)
 local args = {
     [1] = "Dodge"
@@ -877,7 +877,7 @@ game:GetService("Players").LocalPlayer.Character.CharacterMobility.CTS:FireServe
 end
 end)
 
-CharacterChain:Button("Always Block with Machete (Lag)", function()
+CharacterChain:Button("Always Machete Blocking", function()
    while true do wait(0.1)
 local args = {
     [1] = "ParryBegin"
@@ -887,7 +887,7 @@ game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remot
 end
 end)
 
-CharacterChain:Button("Always Swing Machete (Lag)", function()
+VoidChain:Button("Always Swing Machete", function()
    while true do wait(0.1)
 local args = {
     [1] = "MacheteSwing2"
@@ -897,11 +897,11 @@ game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remot
 end
 end)
 
-MiscChain:Button("Warp Chain to Location", function()
+VoidChain:Button("Warp Chain to PowerStation", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV2"))()
 end)
 
-MiscChain:Button("Dupe Points Power", function()
+MiscChain:Button("Points Dupe Restore Power", function()
    for i = 1,2000 do
 fireproximityprompt(game.Workspace.GameStuff.GameSections.POWERSTATION.Hitbox.ProximityPrompt)
 end
@@ -977,25 +977,6 @@ billboardGui.Parent = Child.Head
 end)
 end)
 
-MiscChain:Button("Open Supply & Shop & Doors", function()
-    local Player = game.Players.LocalPlayer
-local Character = Player.Character
-
-for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-  if v.ClassName == "ProximityPrompt" then
-    Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-   
-      fireproximityprompt(v)
-    local args = {
-      [1] = "Looting34534534534534345345"
-      }
-
-    game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
-    wait(0.2)
-  end
-end
-end)
-
 MiscChain:Button("Delete Borders", function()
     workspace.Misc.Barriers:ClearAllChildren()
 end)
@@ -1050,7 +1031,7 @@ end
 end
 end)
 
-VisualChain:Button("Game Sections", function()
+Misc:Button("Interact Things", function()
     local Player = game.Players.LocalPlayer
 local Character = Player.Character
 
@@ -1063,8 +1044,21 @@ for i,v in pairs(game:GetService("Workspace").Misc:GetDescendants()) do
 end
 end)
 
-TestChain:Button("150 Slices", function()
-    for i = 1,150 do 
+VoidChain:Button("300 Slices", function()
+    local UIS = game:GetService("UserInputService)
+    UIS.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.X then
+       for i = 1,300 do
+          local args = {
+             [1] = "MacheteSwing1"
+          }
+
+          game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
+       end
+    end
+end)
+		
+for i = 1,300 do 
 local args = {
     [1] = "MacheteSwing1"
 }
@@ -1074,7 +1068,7 @@ end
 end)
 
 
-TestChain:Button("1000 Slices", function()
+VoidChain:Button("1000 Slices -> Tele to Spawn", function()
     for i = 1,1000 do 
 local args = {
     [1] = "MacheteSwing2"
