@@ -109,7 +109,7 @@ end
  -- Define a function to print "hi" when the hi button is clicked 
   
 game:GetService("UserInputService").InputBegan:Connect(function(input) 	
-if input.Keycode == Enum.KeyCode.T then 		
+if input.KeyCode == Enum.KeyCode.T then 		
 ToggleButtonbru()
 end
 end) 
