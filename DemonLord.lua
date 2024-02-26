@@ -1044,7 +1044,7 @@ for i,v in pairs(game:GetService("Workspace").Misc:GetDescendants()) do
 end
 end)
 
-VoidChain:Button("300 Slices", function()
+Misc:Button("300 Slices", function()
     local UIS = game:GetService("UserInputService")
     UIS.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.X then
@@ -1068,7 +1068,7 @@ end
 end)
 
 
-VoidChain:Button("1000 Slices -> Tele to Spawn", function()
+Misc:Button("1000 Slices -> Tele to Spawn", function()
     for i = 1,1000 do 
 local args = {
     [1] = "MacheteSwing2"
