@@ -1045,7 +1045,7 @@ end
 end)
 
 VoidChain:Button("300 Slices", function()
-    local UIS = game:GetService("UserInputService)
+    local UIS = game:GetService("UserInputService")
     UIS.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.X then
        for i = 1,300 do
