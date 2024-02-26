@@ -981,6 +981,18 @@ MiscChain:Button("Delete Borders", function()
     workspace.Misc.Barriers:ClearAllChildren()
 end)
 
+MiscChain:Button("Interact", function()
+    local Player = game.Players.LocalPlayer
+local Character = Player.Character
+
+for i,v in pairs(game:GetService("Workspace").Misc:GetDescendants()) do
+  if v.ClassName == "ProximityPrompt" then
+    Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+    fireproximityprompt(v)
+    wait(1)
+  end
+end
+end)
 
 --MiscChain:Button("Extend Machete Hitbox (Need to Hold)", function()
  --   game.Players.LocalPlayer.Character.Machete.Handle.Size = Vector3.new(15,15,15)
@@ -1031,20 +1043,9 @@ end
 end
 end)
 
-Misc:Button("Interact Things", function()
-    local Player = game.Players.LocalPlayer
-local Character = Player.Character
 
-for i,v in pairs(game:GetService("Workspace").Misc:GetDescendants()) do
-  if v.ClassName == "ProximityPrompt" then
-    Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-    fireproximityprompt(v)
-    wait(1)
-  end
-end
-end)
 
-Misc:Button("300 Slices", function()
+VoidChain:Button("300 Slices", function()
     local UIS = game:GetService("UserInputService")
     UIS.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.X then
@@ -1068,7 +1069,7 @@ end
 end)
 
 
-Misc:Button("1000 Slices -> Tele to Spawn", function()
+VoidChain:Button("1000 Slices -> Tele to Spawn", function()
     for i = 1,1000 do 
 local args = {
     [1] = "MacheteSwing2"
