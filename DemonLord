@@ -1082,4 +1082,5 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18, 20, -226)
 end)
