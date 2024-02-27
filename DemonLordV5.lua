@@ -101,7 +101,7 @@ end
   local UIS = game:GetService("UserInputService")
     UIS.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.X then
-ToggleButtonBru()
+ToggleButtonbru()
     end
   end)
 
