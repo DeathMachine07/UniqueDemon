@@ -1046,26 +1046,7 @@ end)
 
 
 VoidChain:Button("300 Slices", function()
-    local UIS = game:GetService("UserInputService")
-    UIS.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.X then
-       for i = 1,300 do
-          local args = {
-             [1] = "MacheteSwing1"
-          }
-
-          game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
-       end
-    end
-end)
-		
-for i = 1,300 do 
-local args = {
-    [1] = "MacheteSwing1"
-}
-
-game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
-end
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV5.lua"))()
 end)
 
 
