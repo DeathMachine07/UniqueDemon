@@ -1003,7 +1003,7 @@ TeleportChain:Button("PowerStation", function()
 end)
 
 TeleportChain:Button("Small Cabin", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(161, 60, 231)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(171, 60, 231)
 end)
 
 TeleportChain:Button("Warehouse", function()
@@ -1011,7 +1011,7 @@ TeleportChain:Button("Warehouse", function()
 end)
 
 TeleportChain:Button("Car Cabin", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(149, 60, 2)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-317, 60, 275)
 end)
 
 TeleportChain:Button("Safehouse", function()
