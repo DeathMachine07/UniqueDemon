@@ -9,7 +9,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  -- Create a Frame and set its properties 
  local MainFrame = Instance.new("Frame") 
  MainFrame.Name = "MainFrame" 
- MainFrame.Position = UDim2.new(0.7, 0, 0.3, 0) -- Center of the screen 
+ MainFrame.Position = UDim2.new(0.85, 0, 0.5, 0) -- Center of the screen 
  MainFrame.Size = UDim2.new(0.2, 0, 0.2, 0) -- Half of the screen size 
  MainFrame.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  MainFrame.BackgroundColor3 = Color3.new(0, 0, 0)-- Black color 
@@ -53,7 +53,7 @@ local HiButton = Instance.new("TextButton")
  CreditLabel.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  CreditLabel.BackgroundTransparency = 1 -- White color 
  CreditLabel.TextColor3 = Color3.fromRGB(255,0,0) -- Black color 
- CreditLabel.Text = "Credits: Void X" -- The text to display 
+ CreditLabel.Text = "VOID-X NIGHT WAVES" -- The text to display 
  CreditLabel.Font = Enum.Font.Arial -- The font to use 
  CreditLabel.TextScaled = true -- The text size 
  CreditLabel.Parent = MainFrame 
@@ -87,11 +87,23 @@ local HiButton = Instance.new("TextButton")
    local player = game.Players.LocalPlayer 
    local Character = player.Character or player.CharacterAdded:Wait() 
 
+for i = 1,300 do 
+local args = {
+    [1] = "MacheteSwing1"
+}
+
+game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
+  end
 end
   
   
  -- Define a function to print "hi" when the hi button is clicked 
-  
+  local UIS = game:GetService("UserInputService")
+    UIS.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.X then
+ToggleButtonBru()
+    end
+  end)
 
  -- Connect the functions to the button events 
  HiButton.MouseButton1Click:Connect(ToggleButtonbru) 
