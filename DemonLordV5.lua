@@ -9,7 +9,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  -- Create a Frame and set its properties 
  local MainFrame = Instance.new("Frame") 
  MainFrame.Name = "MainFrame" 
- MainFrame.Position = UDim2.new(0.85, 0, 0.5, 0) -- Center of the screen 
+ MainFrame.Position = UDim2.new(0.85, 0, 0.8, 0) -- Center of the screen 
  MainFrame.Size = UDim2.new(0.2, 0, 0.2, 0) -- Half of the screen size 
  MainFrame.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  MainFrame.BackgroundColor3 = Color3.new(0, 0, 0)-- Black color 
@@ -26,7 +26,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
  TitleLabel.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor at the center 
  TitleLabel.BackgroundTransparency = 1 -- White color 
  TitleLabel.TextColor3 = Color3.new(1,1,1) -- Black color 
- TitleLabel.Text = "Warp Menu" -- The text to display 
+ TitleLabel.Text = "Instant-Kill" -- The text to display 
  TitleLabel.Font = Enum.Font.Oswald -- The font to use 
  TitleLabel.TextSize = 27 -- The text size 
  TitleLabel.Parent = MainFrame 
