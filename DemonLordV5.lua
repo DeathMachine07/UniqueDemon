@@ -111,7 +111,7 @@ TimesUp:Play()
 
 wait(2)
 Death.TextTransparency = 0.6
-Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
+--Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
 
 wait(1.5)
 
