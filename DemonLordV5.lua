@@ -99,7 +99,7 @@ Death.Size = UDim2.new(1,0,1,0)
 Death.Text = "屠杀"
 Death.TextSize = 100
 Death.BackgroundTransparency = 1 -- White color
-Death.TextColor3 = Color3.new(1,0,0)
+Death.TextColor3 = Color3.fromRGB(128,0,128)
 Death.Font = Enum.Font.Creepster
 Death.Parent = Gui
 
@@ -114,7 +114,7 @@ Death.TextTransparency = 0.6
   TimesUp:Destroy()
 HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
 
-wait(1.5)
+wait(0.2)
 
 local Clash = Instance.new("Sound")
 Clash.Parent = workspace
@@ -122,12 +122,7 @@ Clash.Volume = 10
 Clash.SoundId = "rbxassetid://7223765833"
 Clash:Play()
 
-  for i = 1,25 do
-  wait(0.01)
-  HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
-end
-  
-  for i = 1,600 do 
+for i = 1,600 do 
 local args = {
     [1] = "MacheteSwing1"
 }
@@ -135,23 +130,27 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
 
+  
+for i = 1,25 do
+  wait(0.005)
+  HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
+end
 
-
-
-wait(0.05)
-local Color = Instance.new("ColorCorrectionEffect")
+  local Color = Instance.new("ColorCorrectionEffect")
 Color.Parent = game.Lighting
 --  Color.Transparency = 0.5
---Color.Brightness = -0.1
+Color.Brightness = 2
 Color.TintColor = Color3.fromRGB(255,0,0)
 --Color.Saturation = 0.3
 
-local ColorA = Instance.new("ColorCorrectionEffect")
+--[[ local ColorA = Instance.new("ColorCorrectionEffect")
 ColorA.Parent = game.Lighting
 --  ColorA.Transparency = 0.7
 --ColorA.Brightness = -0.1
 ColorA.TintColor = Color3.fromRGB(0,0,0)
---ColorA.Saturation = 0.3
+--ColorA.Saturation = 0.3 --]]
+
+wait(0.05)
 
   local Choir = Instance.new("Sound")
 Choir.Parent = workspace
