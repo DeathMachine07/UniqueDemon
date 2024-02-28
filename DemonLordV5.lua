@@ -40,7 +40,7 @@ local HiButton = Instance.new("TextButton")
  HiButton.BackgroundColor3 = Color3.fromRGB(153,153,153) -- White color 
  HiButton.TextColor3 = Color3.new(0, 0, 0) -- Black color 
  HiButton.BackgroundTransparency = 0.5
- HiButton.Text = "300 SLICES" -- The text to display 
+ HiButton.Text = "600 SLICES TO VOID" -- The text to display 
  HiButton.Font = Enum.Font.SourceSans -- The font to use 
  HiButton.TextScaled = true -- The text size 
  HiButton.Parent = MainFrame 
@@ -83,17 +83,85 @@ local HiButton = Instance.new("TextButton")
  -- Define a function to toggle the frame visibility and update the button text 
 
   
- local function ToggleButtonbru() -- Set the frame visibility to the state 
-   local player = game.Players.LocalPlayer 
-   local Character = player.Character or player.CharacterAdded:Wait() 
+local function ToggleButtonbru() -- Set the frame visibility to the state 
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
 
-for i = 1,300 do 
+local ChoirA = Instance.new("Sound")
+ChoirA.Parent = workspace
+ChoirA.Volume = 7
+ChoirA.SoundId = "rbxassetid://16555186322"
+ChoirA:Play()
+wait(3.5)
+
+local Death = Instance.new("TextLabel")
+Death.Size = UDim2.new(1,0,1,0)
+Death.Text = "魂"
+Death.TextScaled = true
+Death.BackgroundTransparency = 1 -- White color
+Death.TextTransparency = 0
+Death.TextColor3 = Color3.new(1,0,0)
+Death.Font = Enum.Font.Creepster
+Death.Parent = Player.PlayerGui
+
+local TimesUp = Instance.new("Sound")
+TimesUp.Parent = workspace
+TimesUp.Volume = 10
+TimesUp.SoundId = "rbxassetid://16555174165"
+TimesUp:Play()
+
+wait(2)
+Death.TextTransparency = 0.6
+Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
+
+local Clash = Instance.new("Sound")
+Clash.Parent = workspace
+Clash.Volume = 10
+Clash.SoundId = "rbxassetid://16555171260"
+Clash:Play()
+
+wait(1.5)
+for i = 1,15 do
+  wait(0.03)
+  Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
+end
+
+for i = 1,600 do 
 local args = {
     [1] = "MacheteSwing1"
 }
 
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
-  end
+  
+end
+
+wait(0.05)
+local Color = Instance.new("ColorCorrectionEffect")
+Color.Parent = game.Lighting
+Color.Brightness = -0.1
+Color.TintColor = Color3.fromRGB(255,0,0)
+Color.Saturation = 0.3
+
+local ColorA = Instance.new("ColorCorrectionEffect")
+ColorA.Parent = game.Lighting
+ColorA.Brightness = -0.1
+ColorA.TintColor = Color3.fromRGB(0,0,0)
+ColorA.Saturation = 0.3
+
+wait(2.6)
+local Choir = Instance.new("Sound")
+Choir.Parent = workspace
+Choir.Volume = 10
+Choir.SoundId = "rbxassetid://16555168322"
+Choir:Play()
+
+Color:Destroy()
+ColorA:Destroy()
+wait(4.3)
+ChoirA:Destroy()
+Death:Destroy()
+TimesUp:Destroy()
+end)
 end
   
   
