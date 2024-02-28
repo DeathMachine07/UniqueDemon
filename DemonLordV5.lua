@@ -120,18 +120,18 @@ Clash.SoundId = "rbxassetid://16555171260"
 Clash:Play()
 
 wait(1.5)
-for i = 1,15 do
-  wait(0.02)
-  Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
-end
 
-for i = 1,600 do 
+  for i = 1,600 do 
 local args = {
     [1] = "MacheteSwing1"
 }
 
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
+end
   
+for i = 1,25 do
+  wait(0.01)
+  Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Head.CFrame * CFrame.new(i,0,0)
 end
 
 wait(0.05)
