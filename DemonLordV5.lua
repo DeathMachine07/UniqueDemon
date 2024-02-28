@@ -137,7 +137,7 @@ Color.Brightness = 0.1
 Color.TintColor = Color3.fromRGB(255,0,0)
 --Color.Saturation = 0.3
   
-for i = 1,25 do
+for i = 1,45 do
   wait(0.005)
   HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
 end
@@ -154,7 +154,7 @@ wait(0.05)
 
   local Choir = Instance.new("Sound")
 Choir.Parent = workspace
-Choir.Volume = 5
+Choir.Volume = 9
 Choir.SoundId = "rbxassetid://7889522233"
 Choir:Play()
 
