@@ -1042,7 +1042,10 @@ v:Destroy()
 end
 end
 end)
-
+ 
+VoidChain:Button("300 Slices", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV7.lua"))()
+end)
 
 
 VoidChain:Button("600 Slices to Void", function()
