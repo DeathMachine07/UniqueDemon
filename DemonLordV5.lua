@@ -96,8 +96,8 @@ wait(3.5) --]]
 
 local Death = Instance.new("TextLabel")
 Death.Size = UDim2.new(1,0,1,0)
-Death.Text = "魂"
-Death.TextSize = 80
+Death.Text = "屠杀"
+Death.TextSize = 100
 Death.BackgroundTransparency = 1 -- White color
 Death.TextColor3 = Color3.new(1,0,0)
 Death.Font = Enum.Font.Creepster
@@ -105,7 +105,7 @@ Death.Parent = Gui
 
 local TimesUp = Instance.new("Sound")
 TimesUp.Parent = workspace
-TimesUp.Volume = 3
+TimesUp.Volume = 2
 TimesUp.SoundId = "rbxassetid://9114792002"
 TimesUp:Play()
 
@@ -124,7 +124,7 @@ Clash:Play()
 
   for i = 1,25 do
   wait(0.01)
-  Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Head.CFrame * CFrame.new(i,0,0)
+  Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.HumanoidRootPart.CFrame * CFrame.new(i,0,0)
 end
   
   for i = 1,600 do 
