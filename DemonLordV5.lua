@@ -124,7 +124,7 @@ Clash:Play()
 
   for i = 1,25 do
   wait(0.01)
-  HumanoidRootPart.CFrame = game.Players.LocalPlayer.HumanoidRootPart.CFrame * CFrame.new(i,0,0)
+  HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
 end
   
   for i = 1,600 do 
