@@ -87,12 +87,12 @@ local function ToggleButtonbru() -- Set the frame visibility to the state
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
 
-local ChoirA = Instance.new("Sound")
+--[[local ChoirA = Instance.new("Sound")
 ChoirA.Parent = workspace
 ChoirA.Volume = 10
 ChoirA.SoundId = "rbxassetid://16555186322"
 ChoirA:Play()
-wait(3.5)
+wait(3.5) --]]
 
 local Death = Instance.new("TextLabel")
 Death.Size = UDim2.new(1,0,1,0)
@@ -105,19 +105,13 @@ Death.Parent = Gui
 
 local TimesUp = Instance.new("Sound")
 TimesUp.Parent = workspace
-TimesUp.Volume = 10
-TimesUp.SoundId = "rbxassetid://16555174165"
+TimesUp.Volume = 6
+TimesUp.SoundId = "rbxassetid://9114792002"
 TimesUp:Play()
 
 wait(2)
 Death.TextTransparency = 0.6
 Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
-
-local Clash = Instance.new("Sound")
-Clash.Parent = workspace
-Clash.Volume = 10
-Clash.SoundId = "rbxassetid://16555171260"
-Clash:Play()
 
 wait(1.5)
 
@@ -128,11 +122,19 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
+
   
 for i = 1,25 do
   wait(0.01)
   Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Head.CFrame * CFrame.new(i,0,0)
 end
+
+  local Clash = Instance.new("Sound")
+Clash.Parent = workspace
+Clash.Volume = 10
+Clash.SoundId = "rbxassetid://7223765833"
+Clash:Play()
+
 
 wait(0.05)
 local Color = Instance.new("ColorCorrectionEffect")
