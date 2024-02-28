@@ -89,7 +89,7 @@ local Character = Player.Character
 
 local ChoirA = Instance.new("Sound")
 ChoirA.Parent = workspace
-ChoirA.Volume = 7
+ChoirA.Volume = 10
 ChoirA.SoundId = "rbxassetid://16555186322"
 ChoirA:Play()
 wait(3.5)
@@ -99,10 +99,9 @@ Death.Size = UDim2.new(1,0,1,0)
 Death.Text = "魂"
 Death.TextScaled = true
 Death.BackgroundTransparency = 1 -- White color
-Death.TextTransparency = 0
 Death.TextColor3 = Color3.new(1,0,0)
 Death.Font = Enum.Font.Creepster
-Death.Parent = Player.PlayerGui
+Death.Parent = Gui
 
 local TimesUp = Instance.new("Sound")
 TimesUp.Parent = workspace
@@ -122,7 +121,7 @@ Clash:Play()
 
 wait(1.5)
 for i = 1,15 do
-  wait(0.03)
+  wait(0.02)
   Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
 end
 
@@ -138,15 +137,17 @@ end
 wait(0.05)
 local Color = Instance.new("ColorCorrectionEffect")
 Color.Parent = game.Lighting
-Color.Brightness = -0.1
+  Color.Transparency = 0.5
+--Color.Brightness = -0.1
 Color.TintColor = Color3.fromRGB(255,0,0)
-Color.Saturation = 0.3
+--Color.Saturation = 0.3
 
 local ColorA = Instance.new("ColorCorrectionEffect")
 ColorA.Parent = game.Lighting
-ColorA.Brightness = -0.1
+  ColorA.Transparency = 0.7
+--ColorA.Brightness = -0.1
 ColorA.TintColor = Color3.fromRGB(0,0,0)
-ColorA.Saturation = 0.3
+--ColorA.Saturation = 0.3
 
 wait(2.6)
 local Choir = Instance.new("Sound")
