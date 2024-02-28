@@ -133,7 +133,7 @@ end
   local Color = Instance.new("ColorCorrectionEffect")
 Color.Parent = game.Lighting
 --  Color.Transparency = 0.5
-Color.Brightness = 2
+Color.Brightness = 0.1
 Color.TintColor = Color3.fromRGB(255,0,0)
 --Color.Saturation = 0.3
   
@@ -160,7 +160,7 @@ Choir:Play()
 
   wait(0.4)
   Color:Destroy()
-ColorA:Destroy()
+--ColorA:Destroy()
 
 
 wait(4.3)
