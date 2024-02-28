@@ -112,7 +112,7 @@ TimesUp:Play()
 wait(2)
 Death.TextTransparency = 0.6
   TimesUp:Destroy()
-Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
+Character.PrimaryPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
 
 wait(1.5)
 
@@ -124,7 +124,7 @@ Clash:Play()
 
   for i = 1,25 do
   wait(0.01)
-  Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.HumanoidRootPart.CFrame * CFrame.new(i,0,0)
+  Character.PrimaryPart.CFrame = game.Players.LocalPlayer.HumanoidRootPart.CFrame * CFrame.new(i,0,0)
 end
   
   for i = 1,600 do 
