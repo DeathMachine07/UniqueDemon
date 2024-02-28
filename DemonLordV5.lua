@@ -1,6 +1,8 @@
 local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "DeliveryCreator"} 
   
- local player = game.Players.LocalPlayer 
+ local player = game:GetService('Players').LocalPlayer
+local character = player.Character or player.CharacterAdded:wait()
+local HumanoidRootPart = character:WaitForChild('HumanoidRootPart') 
  --if table.find(PlayerPermission, player.Name) then 
  local Gui = Instance.new("ScreenGui") 
  Gui.Parent = game.Players.LocalPlayer.PlayerGui 
@@ -84,8 +86,6 @@ local HiButton = Instance.new("TextButton")
 
   
 local function ToggleButtonbru() -- Set the frame visibility to the state 
-local Player = game.Players.LocalPlayer
-local Character = Player.Character
 
 --[[local ChoirA = Instance.new("Sound")
 ChoirA.Parent = workspace
@@ -112,7 +112,7 @@ TimesUp:Play()
 wait(2)
 Death.TextTransparency = 0.6
   TimesUp:Destroy()
-Character.Head.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
+HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
 
 wait(1.5)
 
@@ -124,7 +124,7 @@ Clash:Play()
 
   for i = 1,25 do
   wait(0.01)
-  Character.PrimaryPart.CFrame = game.Players.LocalPlayer.HumanoidRootPart.CFrame * CFrame.new(i,0,0)
+  HumanoidRootPart.CFrame = game.Players.LocalPlayer.HumanoidRootPart.CFrame * CFrame.new(i,0,0)
 end
   
   for i = 1,600 do 
