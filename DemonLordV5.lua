@@ -97,7 +97,7 @@ wait(3.5) --]]
 local Death = Instance.new("TextLabel")
 Death.Size = UDim2.new(1,0,1,0)
 Death.Text = "魂"
-Death.TextSize = 35
+Death.TextSize = 80
 Death.BackgroundTransparency = 1 -- White color
 Death.TextColor3 = Color3.new(1,0,0)
 Death.Font = Enum.Font.Creepster
@@ -105,7 +105,7 @@ Death.Parent = Gui
 
 local TimesUp = Instance.new("Sound")
 TimesUp.Parent = workspace
-TimesUp.Volume = 6
+TimesUp.Volume = 3
 TimesUp.SoundId = "rbxassetid://9114792002"
 TimesUp:Play()
 
@@ -153,7 +153,7 @@ ColorA.TintColor = Color3.fromRGB(0,0,0)
 
   local Choir = Instance.new("Sound")
 Choir.Parent = workspace
-Choir.Volume = 10
+Choir.Volume = 5
 Choir.SoundId = "rbxassetid://7889522233"
 Choir:Play()
 
