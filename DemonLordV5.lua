@@ -151,17 +151,19 @@ ColorA.Parent = game.Lighting
 ColorA.TintColor = Color3.fromRGB(0,0,0)
 --ColorA.Saturation = 0.3
 
-wait(2.6)
-local Choir = Instance.new("Sound")
+  local Choir = Instance.new("Sound")
 Choir.Parent = workspace
 Choir.Volume = 10
-Choir.SoundId = "rbxassetid://16555168322"
+Choir.SoundId = "rbxassetid://7889522233"
 Choir:Play()
 
-Color:Destroy()
+  wait(0.4)
+  Color:Destroy()
 ColorA:Destroy()
+
+
 wait(4.3)
-ChoirA:Destroy()
+Choir:Destroy()
 Death:Destroy()
 TimesUp:Destroy()
 end
