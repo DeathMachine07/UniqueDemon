@@ -111,10 +111,22 @@ TimesUp:Play()
 
 wait(2)
 Death.TextTransparency = 0.6
---Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
+  TimesUp:Destroy()
+Character.HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
 
 wait(1.5)
 
+local Clash = Instance.new("Sound")
+Clash.Parent = workspace
+Clash.Volume = 10
+Clash.SoundId = "rbxassetid://7223765833"
+Clash:Play()
+
+  for i = 1,25 do
+  wait(0.01)
+  Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Head.CFrame * CFrame.new(i,0,0)
+end
+  
   for i = 1,600 do 
 local args = {
     [1] = "MacheteSwing1"
@@ -123,17 +135,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
 
-  
-for i = 1,25 do
-  wait(0.01)
-  Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Head.CFrame * CFrame.new(i,0,0)
-end
 
-  local Clash = Instance.new("Sound")
-Clash.Parent = workspace
-Clash.Volume = 10
-Clash.SoundId = "rbxassetid://7223765833"
-Clash:Play()
 
 
 wait(0.05)
@@ -165,7 +167,7 @@ ColorA:Destroy()
 wait(4.3)
 Choir:Destroy()
 Death:Destroy()
-TimesUp:Destroy()
+--TimesUp:Destroy()
 end
   
   
