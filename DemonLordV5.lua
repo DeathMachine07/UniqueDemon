@@ -97,7 +97,7 @@ wait(3.5)
 local Death = Instance.new("TextLabel")
 Death.Size = UDim2.new(1,0,1,0)
 Death.Text = "魂"
-Death.TextScaled = true
+Death.TextSize = 35
 Death.BackgroundTransparency = 1 -- White color
 Death.TextColor3 = Color3.new(1,0,0)
 Death.Font = Enum.Font.Creepster
@@ -137,14 +137,14 @@ end
 wait(0.05)
 local Color = Instance.new("ColorCorrectionEffect")
 Color.Parent = game.Lighting
-  Color.Transparency = 0.5
+--  Color.Transparency = 0.5
 --Color.Brightness = -0.1
 Color.TintColor = Color3.fromRGB(255,0,0)
 --Color.Saturation = 0.3
 
 local ColorA = Instance.new("ColorCorrectionEffect")
 ColorA.Parent = game.Lighting
-  ColorA.Transparency = 0.7
+--  ColorA.Transparency = 0.7
 --ColorA.Brightness = -0.1
 ColorA.TintColor = Color3.fromRGB(0,0,0)
 --ColorA.Saturation = 0.3
