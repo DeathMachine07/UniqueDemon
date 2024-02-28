@@ -161,7 +161,6 @@ wait(4.3)
 ChoirA:Destroy()
 Death:Destroy()
 TimesUp:Destroy()
-end)
 end
   
   
