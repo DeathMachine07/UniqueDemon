@@ -130,18 +130,18 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
 
-  
-for i = 1,25 do
-  wait(0.005)
-  HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
-end
-
   local Color = Instance.new("ColorCorrectionEffect")
 Color.Parent = game.Lighting
 --  Color.Transparency = 0.5
 Color.Brightness = 2
 Color.TintColor = Color3.fromRGB(255,0,0)
 --Color.Saturation = 0.3
+  
+for i = 1,25 do
+  wait(0.005)
+  HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
+end
+
 
 --[[ local ColorA = Instance.new("ColorCorrectionEffect")
 ColorA.Parent = game.Lighting
