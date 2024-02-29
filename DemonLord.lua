@@ -833,48 +833,41 @@ char.Stats.Stamina:GetPropertyChangedSignal("Value"):Connect(abc)
 end)
 
 CharacterChain:Button("Infinite CombatStamina", function()
-  local mt = getrawmetatable(game.Players.LocalPlayer.Character);
-make_writeable(mt); 
-local old_index = mt.__index;
+  local plr = game.Players.LocalPlayer
+local char = plr.Character
 
-mt.__index = function(a, b) 
-if tostring(a) == "CombatStamina" then 
-if tostring(b) == "Value" then return 100; 
-end 
-end 
-return old_index(a, b);
+local function abc()	
+char.Stats.CombatStamina.Value = 100
 end
+
+char.Stats.CombatStamina:GetPropertyChangedSignal("Value"):Connect(abc)
 end)
 
 
 CharacterChain:Button("Super Stamina Regen", function()
-    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
-make_writeable(mt); 
-local old_index = mt.__index;
+    local plr = game.Players.LocalPlayer
+local char = plr.Character
 
-mt.__index = function(a, b) 
-if tostring(a) == "StaminaRegen" then 
-if tostring(b) == "Value" then return 100; 
-end 
-end 
-return old_index(a, b);
+local function abc()	
+char.Stats.StaminaRegen.Value = 100
 end
+
+char.Stats.StaminaRegen:GetPropertyChangedSignal("Value"):Connect(abc)
+
 end)
 
---[[ CharacterChain:Button("Infinite Dodge", function()
-    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
-make_writeable(mt); 
-local old_index = mt.__index;
+CharacterChain:Button("Infinite Dodge", function()
+    local plr = game.Players.LocalPlayer
+local char = plr.Character
 
-mt.__index = function(a, b) 
-if tostring(a) == "Dodging" then 
-if tostring(b) == "Value" then return true; 
-end 
-end 
-return old_index(a, b);
+local function abc()	
+char.Stats.Dodge.Value = true
 end
+
+char.Stats.Dodge:GetPropertyChangedSignal("Value"):Connect(abc)
+
 end)
---]]
+
 
 CharacterChain:Button("Always Dodging", function()
     while true do wait(0.2)
