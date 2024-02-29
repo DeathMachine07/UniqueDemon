@@ -100,14 +100,14 @@ TimesUp.SoundId = "rbxassetid://4826619573"
    local player = game.Players.LocalPlayer 
    local Character = player.Character or player.CharacterAdded:Wait() 
      if Yoke == false then
+TimesUp:Play()
 Yoke = true
 HiButton.Text = "Warp To CHAIN"
-TimesUp:Play()
      Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
 elseif Yoke == true then
+TimesUp:Play()
 Yoke = false
 HiButton.Text = "Warp To POWERSTATION"
-   TimesUp:Play()
   Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end 
 end
