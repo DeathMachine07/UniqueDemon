@@ -132,8 +132,8 @@ if canslide then
 		
 		local slide = Instance.new("BodyVelocity")
 		slide.MaxForce = Vector3.new(1,0,1) * 30000
-		slide.Velocity = char.HumanoidRootPart.CFrame.lookVector * 100
-		slide.Parent = char.HumanoidRootPart
+		slide.Velocity = character.HumanoidRootPart.CFrame.lookVector * 100
+		slide.Parent = HumanoidRootPart
 		
 		  local Color = Instance.new("ColorCorrectionEffect")
       Color.Parent = game.Lighting
