@@ -127,8 +127,8 @@ Clash:Play()
 if canslide then
 		canslide = false
 		
-		local playAnim = char.Humanoid:LoadAnimation(slideAnim)
-		playAnim:Play()
+		--local playAnim = char.Humanoid:LoadAnimation(slideAnim)
+		--playAnim:Play()
 		
 		local slide = Instance.new("BodyVelocity")
 		slide.MaxForce = Vector3.new(1,0,1) * 30000
