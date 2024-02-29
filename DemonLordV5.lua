@@ -154,7 +154,7 @@ end
 			slide.Velocity*= 1.1
 		end
 		Color:Destroy()
-		playAnim:Stop()
+		--playAnim:Stop()
 		slide:Destroy()
 		canslide = true
 	end
