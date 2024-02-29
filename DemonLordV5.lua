@@ -112,7 +112,7 @@ TimesUp:Play()
 wait(2)
 Death.TextTransparency = 0.6
   TimesUp:Destroy()
-HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(0,-5,0)
+HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.HumanoidRootPart.CFrame * CFrame.new(0,0,7)
 
 wait(0.2)
 
@@ -122,33 +122,42 @@ Clash.Volume = 10
 Clash.SoundId = "rbxassetid://7223765833"
 Clash:Play()
 
-for i = 1,600 do 
+  local canslide = true
+  
+if canslide then
+		canslide = false
+		
+		local playAnim = char.Humanoid:LoadAnimation(slideAnim)
+		playAnim:Play()
+		
+		local slide = Instance.new("BodyVelocity")
+		slide.MaxForce = Vector3.new(1,0,1) * 30000
+		slide.Velocity = char.HumanoidRootPart.CFrame.lookVector * 100
+		slide.Parent = char.HumanoidRootPart
+		
+		  local Color = Instance.new("ColorCorrectionEffect")
+      Color.Parent = game.Lighting
+      Color.Contrast = 1
+      Color.Brightness = 0.1
+      Color.TintColor = Color3.fromRGB(255,0,25)
+
+    for i = 1,600 do 
 local args = {
     [1] = "MacheteSwing1"
 }
 
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remotes.Interact:FireServer(unpack(args))
 end
-
-  local Color = Instance.new("ColorCorrectionEffect")
-Color.Parent = game.Lighting
---  Color.Transparency = 0.5
-Color.Brightness = 0.1
-Color.TintColor = Color3.fromRGB(255,0,0)
---Color.Saturation = 0.3
-  
-for i = 1,45 do
-  wait(0.005)
-  HumanoidRootPart.CFrame = workspace.Misc.AI.CHAIN.PrimaryPart.CFrame * CFrame.new(i,0,0)
-end
-
-
---[[ local ColorA = Instance.new("ColorCorrectionEffect")
-ColorA.Parent = game.Lighting
---  ColorA.Transparency = 0.7
---ColorA.Brightness = -0.1
-ColorA.TintColor = Color3.fromRGB(0,0,0)
---ColorA.Saturation = 0.3 --]]
+    
+		for count = 1, 8 do
+			wait()
+			slide.Velocity*= 1.1
+		end
+		Color:Destroy()
+		playAnim:Stop()
+		slide:Destroy()
+		canslide = true
+	end
 
 wait(0.05)
 
@@ -159,7 +168,6 @@ Choir.SoundId = "rbxassetid://7889522233"
 Choir:Play()
 
   wait(0.4)
-  Color:Destroy()
 --ColorA:Destroy()
 
 
