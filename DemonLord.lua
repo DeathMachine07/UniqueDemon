@@ -826,7 +826,7 @@ local plr = game.Players.LocalPlayer
 local char = plr.Character
 
 local function abc()	
-char.Stats.Stamina.Value == 100
+char.Stats.Stamina.Value = 100
 end
 
 char.Stats.Stamina:GetPropertyChangedSignal("Value"):Connect(abc)
