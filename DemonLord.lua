@@ -810,7 +810,7 @@ end)
 end)
 
 CharacterChain:Button("Infinite Stamina", function()
-    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
+  --[[  local mt = getrawmetatable(game.Players.LocalPlayer.Character);
 make_writeable(mt); 
 local old_index = mt.__index;
 
@@ -820,11 +820,18 @@ if tostring(b) == "Value" then return 999;
 end 
 end 
 return old_index(a, b);
-end
+end  --]]
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+char.Stats.Stamina:GetPropertyChangeSignal("Value)
+char.Stats.Stamina.Value == 100
+		end
 end)
 
 CharacterChain:Button("Infinite CombatStamina", function()
-    local mt = getrawmetatable(game.Players.LocalPlayer.Character);
+  local mt = getrawmetatable(game.Players.LocalPlayer.Character);
 make_writeable(mt); 
 local old_index = mt.__index;
 
@@ -852,7 +859,7 @@ return old_index(a, b);
 end
 end)
 
-CharacterChain:Button("Infinite Dodge", function()
+--[[ CharacterChain:Button("Infinite Dodge", function()
     local mt = getrawmetatable(game.Players.LocalPlayer.Character);
 make_writeable(mt); 
 local old_index = mt.__index;
@@ -865,7 +872,7 @@ end
 return old_index(a, b);
 end
 end)
-
+--]]
 
 CharacterChain:Button("Always Dodging", function()
     while true do wait(0.2)
@@ -1037,7 +1044,7 @@ VisualChain:Button("Fullbright", function()
     game.Lighting.Brightness = 5
     game.Lighting.GlobalShadows = false
 for i,v in pairs(game.Lighting:GetChildren()) do
-      if v.Name ~= "Misc" then
+      if v.Name ~= "Misc" and v.Name ~= "CamDOP" then
 v:Destroy()
 end
 end
