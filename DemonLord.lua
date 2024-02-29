@@ -825,9 +825,11 @@ end  --]]
 local plr = game.Players.LocalPlayer
 local char = plr.Character
 
-char.Stats.Stamina:GetPropertyChangeSignal("Value)
+local function abc()	
 char.Stats.Stamina.Value == 100
-		end
+end
+
+char.Stats.Stamina:GetPropertyChangedSignal("Value"):Connect(abc)
 end)
 
 CharacterChain:Button("Infinite CombatStamina", function()
@@ -895,7 +897,7 @@ end
 end)
 
 VoidChain:Button("Always Swing Machete", function()
-   while true do wait(0.1)
+   while true do wait()
 local args = {
     [1] = "MacheteSwing2"
 }
