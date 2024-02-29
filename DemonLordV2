@@ -1,5 +1,10 @@
 local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "DeliveryCreator"} 
-  
+
+local TimesUp = Instance.new("Sound")
+TimesUp.Parent = workspace
+TimesUp.Volume = 7
+TimesUp.SoundId = "rbxassetid://4826619573"
+
  local player = game.Players.LocalPlayer 
  --if table.find(PlayerPermission, player.Name) then 
  local Gui = Instance.new("ScreenGui") 
@@ -97,11 +102,13 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
      if Yoke == false then
 Yoke = true
 HiButton.Text = "Warp To CHAIN"
+TimesUp:Play()
      Character.HumanoidRootPart.CFrame = CFrame.new(-208, 60, -130)
 elseif Yoke == true then
 Yoke = false
 HiButton.Text = "Warp To POWERSTATION"
-     Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
+   TimesUp:Play()
+  Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Misc.AI.CHAIN.PrimaryPart.CFrame
 end 
 end
   
