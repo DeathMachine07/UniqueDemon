@@ -2,7 +2,7 @@ local PlayerPermission = {"heoconchien", "moochoo555555", "Leongodmode55", "Deli
 
 local TimesUp = Instance.new("Sound")
 TimesUp.Parent = workspace
-TimesUp.Volume = 7
+TimesUp.Volume = 4
 TimesUp.SoundId = "rbxassetid://4826619573"
 
  local player = game.Players.LocalPlayer 
