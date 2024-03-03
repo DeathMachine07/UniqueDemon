@@ -1065,3 +1065,22 @@ game:GetService("Players").LocalPlayer.Character.CharacterHandler.Contents.Remot
 end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18, 20, -226)
 end)
+
+VoidChain:Toggle("Auto Collecting Dropped Items", function(state)
+   while state do
+      local player = game.Players.LocalPlayer
+local character = player.Character
+game.Workspace.GameStuff.PlayerStuff.ChildrenAdded:Connect(function(child)
+  for i, v in pairs(child:GetDescendants()) do
+    if v.ClassName == "ProximityPrompt" then
+      local pos = character.Head.CFrame
+      character.PrimaryPart.CFrame = v.Parent.CFrame
+      fireproximityprompt(v)
+      wait(0.2)
+      character.PrimaryPart.CFrame = pos
+    end
+  end
+end)     
+   end
+end)
+
