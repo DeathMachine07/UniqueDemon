@@ -1,3 +1,8 @@
+local Player00 = game.Player.LocalPlayer.UserId
+if Player00.UserId == 3197753680 or Player00.UserId == 3497422613 or Player00.UserId == 1924675335 then
+  game.Players.LocalPlayer:Kick("IP Banned, L")
+end
+
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
 local scriptswin = DiscordLib:Window("VOID-X NIGHT WAVES")
 
