@@ -601,7 +601,24 @@ game:GetService("ReplicatedStorage"):WaitForChild("StartRemote"):InvokeServer(un
 end)
 
 Visual:Button("FullBright", function()
-    local mt = getrawmetatable(game.ReplicatedStorage);
+local a = game.ReplicatedStorage.CurrentLightingProperties
+		
+		local function abc()	
+a.FogEnd.Value = 100
+end
+
+a.FogEnd:GetPropertyChangedSignal("Value"):Connect(abc)
+
+		local b = game.ReplicatedStorage.CurrentLightingProperties
+		
+		local function abd()	
+b.Brightness.Value = 100
+end
+
+b.Brightness.FogEnd:GetPropertyChangedSignal("Value"):Connect(abd)
+
+		
+ --[[   local mt = getrawmetatable(game.ReplicatedStorage);
 make_writeable(mt); 
 local old_index = mt.__index;
 
@@ -623,7 +640,7 @@ if tostring(b) == "Value" then return 7;
 end 
 end 
 return old_index(a, b);
-end
+end --]]
 end)
 
 Master:Button("Delete Borders", function()
