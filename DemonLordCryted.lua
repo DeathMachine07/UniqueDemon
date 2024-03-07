@@ -1120,12 +1120,3 @@ end)
 
 
 
-
-
-
-
-wait(4)
-local Player00 = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
-if Player00.Name == "DbSwaNSnowxs" or Player00.Name == "oAnn21" or Player00.Name == "thanhtete12345t"  then
-  game.Players.LocalPlayer:Kick("IP Banned, L")
-end
