@@ -1,8 +1,3 @@
-local Player00 = game.Players.LocalPlayer.Name
-if Player00 == "DbSwaNSnowxs" or Player00 == "oAnn21" or Player00 == "thanhtete12345t"  then
-  game.Players.LocalPlayer:Kick("IP Banned, L")
-end
-
 local DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt"))()
 local scriptswin = DiscordLib:Window("VOID-X NIGHT WAVES")
 
@@ -1109,3 +1104,28 @@ end)
    end
 end)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+wait(4)
+local Player00 = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+if Player00.Name == "DbSwaNSnowxs" or Player00.Name == "oAnn21" or Player00.Name == "thanhtete12345t"  then
+  game.Players.LocalPlayer:Kick("IP Banned, L")
+end
