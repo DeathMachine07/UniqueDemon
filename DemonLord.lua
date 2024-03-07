@@ -650,7 +650,7 @@ end
 end)
 
 Master:Button("Instant Kill", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV00"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV1938"))()
 end)
 
 Master:Button("Rejoin Server", function()
