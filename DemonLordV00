@@ -1,1 +1,1 @@
-game.Players.LocalPlayer:Kick("Script is not a toy, Bye trashcans?")
+--game.Players.LocalPlayer:Kick("Script is not a toy, Bye trashcans?")
