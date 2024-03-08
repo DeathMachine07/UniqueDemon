@@ -670,6 +670,21 @@ Master:Button("Instant Kill", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DeathMachine07/UniqueDemon/main/DemonLordV1938"))()
 end)
 
+Master:Button("Ragdoll Rake", function()
+    local player = game.Players.LocalPlayer 
+ local Character = player.Character or player.CharacterAdded:Wait() 
+  
+ Character:WaitForChild("HumanoidRootPart").Size = Vector3.new(5,2,5) 
+  
+ Character.HumanoidRootPart.Touched:Connect(function(part) 
+ if part.Parent:FindFirstChild("Monster") or part.Parent:FindFirstChild("Zombie")  then 
+while true do wait (0.1)
+part.Parent:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Ragdoll)
+end
+ end 
+end)
+	end)
+
 Master:Button("Rejoin Server", function()
     local ts = game:GetService("TeleportService")
 local p = game:GetService("Players").LocalPlayer
