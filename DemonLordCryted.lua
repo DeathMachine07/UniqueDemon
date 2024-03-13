@@ -1071,7 +1071,7 @@ VisualChain:Button("Fullbright", function()
     game.Lighting.Brightness = 5
     game.Lighting.GlobalShadows = false
 for i,v in pairs(game.Lighting:GetChildren()) do
-      if v.Name ~= "Misc" and v.Name ~= "CamDOP" then
+      if v.Name ~= "Misc" and v.Name ~= "CamDOP" and v.Name ~= "DeathBlur" and v.Name ~= "ShellshockBlur" then
 v:Destroy()
 end
 end
