@@ -42,7 +42,7 @@ local HiButton = Instance.new("TextButton")
  HiButton.BackgroundColor3 = Color3.fromRGB(153,153,153) -- White color 
  HiButton.TextColor3 = Color3.new(0, 0, 0) -- Black color 
  HiButton.BackgroundTransparency = 0.5
- HiButton.Text = "600 SLICES TO VOID" -- The text to display 
+ HiButton.Text = "600 SLICES TO VOID (I to use)" -- The text to display 
  HiButton.Font = Enum.Font.SourceSans -- The font to use 
  HiButton.TextScaled = true -- The text size 
  HiButton.Parent = MainFrame 
@@ -181,7 +181,7 @@ end
  -- Define a function to print "hi" when the hi button is clicked 
   local UIS = game:GetService("UserInputService")
     UIS.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.X then
+    if input.KeyCode == Enum.KeyCode.I then
 ToggleButtonbru()
     end
   end)
