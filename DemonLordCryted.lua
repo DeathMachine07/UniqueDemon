@@ -1019,7 +1019,7 @@ MiscChain:Button("Interact", function()
     local Player = game.Players.LocalPlayer
 local Character = Player.Character
 
-for i,v in pairs(game:GetService("Workspace").Misc:GetDescendants()) do
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
   if v.ClassName == "ProximityPrompt" then
     Character.HumanoidRootPart.CFrame = v.Parent.CFrame
     fireproximityprompt(v)
